@@ -96,15 +96,15 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Construction Video - Genuine Civil Site & Cranes Timelapse */}
+      {/* Background Civil Construction Crane Video - Clear & Transparent */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
-          key="civil-construction-video"
+          key="civil-crane-construction-video"
           autoPlay
           loop
           muted
           playsInline
-          poster="/images/services/1.jpg"
+          poster="/images/main-slider/slide-1.jpg"
           className="w-full h-full object-cover scale-100"
         >
           <source src="/videos/civil-construction-site.mp4" type="video/mp4" />

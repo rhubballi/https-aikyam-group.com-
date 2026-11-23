@@ -11,7 +11,6 @@ import {
   Truck,
   Droplets,
   Layers,
-  Phone,
   MessageSquare,
   Sparkles
 } from 'lucide-react';
@@ -79,13 +78,13 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 relative z-10">
-            <a
-              href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
+            <Link
+              to="/contact"
               className="px-6 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 shadow-md shadow-blue-900/30"
             >
-              <Phone className="w-4 h-4 text-[#38bdf8]" />
-              <span>Call: {companyProfile.contact.displayPhone}</span>
-            </a>
+              <Sparkles className="w-4 h-4 text-[#38bdf8]" />
+              <span>Contact Engineering Team</span>
+            </Link>
             <a
               href={companyProfile.contact.whatsappLink}
               target="_blank"
