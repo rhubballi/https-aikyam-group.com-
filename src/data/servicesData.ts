@@ -229,5 +229,119 @@ export const servicesData: ServiceItem[] = [
       "Automated Track Level Survey Sensors"
     ],
     featuredProjectsSlugs: ["gudur-bitragunta-3rd-line-ror", "doddajala-railway-box-girder-bridge"]
+  },
+  {
+    id: "road-construction",
+    slug: "roads",
+    title: "Road & Highway Infrastructure Construction",
+    shortDescription: "Rigid RCC concrete roads, heavy-duty asphalt highways, industrial arterial corridors, earthworks, and integrated storm culverts.",
+    fullDescription: "JP Constructions delivers durable highway and road networks designed to withstand intense axle loads, adverse weather conditions, and high-density traffic. Our roadway engineering spans flexible bituminous pavements, rigid Pavement Quality Concrete (PQC) roads, multi-lane bypasses, and industrial logistics corridors built in compliance with MoRTH and IRC standards.",
+    category: "roads",
+    heroImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1600&q=80",
+    iconName: "Truck",
+    scopeOfWork: [
+      "Rigid RCC road pavements (PQC / Dry Lean Concrete)",
+      "Bituminous asphalt concrete paving for national & state highways",
+      "Heavy industrial estate internal arterial road networks",
+      "Sub-grade soil stabilization, embankment filling, and compaction",
+      "Reinforced concrete box culverts, piped cross-drainage, and swales",
+      "Thermoplastic road markings, metal beam crash barriers, and signage"
+    ],
+    benefits: [
+      "Heavy load-bearing capacity designed for up to 150 kN single-axle truck loads",
+      "Long service life exceeding 25+ years with minimal rutting or maintenance",
+      "Advanced sensor-controlled paving for superior international roughness index (IRI)",
+      "Complete drainage integration preventing water stagnation and edge erosion"
+    ],
+    process: [
+      { step: 1, title: "Topographic & Traffic Survey", description: "Axle-load spectrum analysis, CBR soil testing, and pavement layer design." },
+      { step: 2, title: "Earthwork & Embankment", description: "Cutting, filling, and precision compaction with 12T vibratory soil rollers." },
+      { step: 3, title: "Sub-Base & DLC Laying", description: "Granular Sub-Base (GSB) and Dry Lean Concrete (DLC) placement with sensor pavers." },
+      { step: 4, title: "PQC / Bituminous Surfacing", description: "High-grade concrete paving with dowel bar inserters and transverse joint cutting." },
+      { step: 5, title: "Finishing & Safety Hardware", description: "Joint sealing, kerb casting, thermoplastic striping, and crash barrier installation." }
+    ],
+    equipmentUsed: [
+      "Electronic Sensor Pavers with Dual Grade Controls",
+      "12T Vibratory Tandem & Soil Compactors",
+      "Motor Graders with Auto-Blade Levelers",
+      "Concrete Joint Cutting Machines & Bitumen Sprayers"
+    ],
+    featuredProjectsSlugs: ["doddajala-railway-box-girder-bridge", "nh-7-six-lane-highway-corridor"]
+  },
+  {
+    id: "pipelines-jackwell",
+    slug: "pipelines",
+    title: "Pipelines, Jackwells & Water Infrastructure",
+    shortDescription: "Bulk water supply transmission mains, Ductile Iron (DI) pipelines, river intake jackwells, hydraulic pumphouses, and drainage networks.",
+    fullDescription: "Specializing in municipal and industrial fluid transmission systems, JP Constructions executes end-to-end water infrastructure. From deep riverbed intake jackwells and high-head pumping stations to large-diameter DI and MS pipeline laying across challenging topographies, our civil engineering team ensures leak-free, long-lifespan hydraulic infrastructure.",
+    category: "pipelines",
+    heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+    iconName: "Droplets",
+    scopeOfWork: [
+      "Ductile Iron (DI), Mild Steel (MS), and HDPE bulk water pipeline laying",
+      "Deep river and canal intake jackwells with pneumatic caisson sinking",
+      "High-capacity RCC pumphouses, electrical substation bays, and gantry bays",
+      "Trenching, bedding, pipe jointing, and hydrostatic pressure testing",
+      "Thrust block construction, air valve chambers, and scour valve installations",
+      "Industrial effluent transmission lines and underground storm drainage canals"
+    ],
+    benefits: [
+      "Proven execution on specialized intake wells and institutional pipeline networks",
+      "Hydrostatic testing conducted at 1.5x working pressure ensuring zero leaks",
+      "Expertise in deep well sinking adjacent to live water bodies without collapse",
+      "Corrosion-resistant epoxy coatings and sacrificial cathodic protection"
+    ],
+    process: [
+      { step: 1, title: "Hydraulic Profile & Route Survey", description: "Ground elevation mapping, hydraulic gradient line (HGL), and pipe sizing." },
+      { step: 2, title: "Caisson Sinking for Intake Well", description: "Steining casting and open/pneumatic well sinking to desired riverbed depth." },
+      { step: 3, title: "Trenching & Bedding Preparation", description: "Laser-aligned trenching with granular sand/gravel bedding layers." },
+      { step: 4, title: "Pipe Stringing, Lowering & Jointing", description: "Heavy crane lowering, socket-spigot push-on jointing with food-grade EPDM gaskets." },
+      { step: 5, title: "Hydro-testing & Commissioning", description: "Sectional hydrostatic pressure hold tests and pump intake commissioning." }
+    ],
+    equipmentUsed: [
+      "Hydraulic Pipelayer Cranes & Trench Excavators",
+      "High-Pressure Hydrostatic Test Pumps & Gauges",
+      "Well Sinking Clamshell Grabs & Dewatering Pumps",
+      "Automated Pipe Beveling & Butt Fusion Machines"
+    ],
+    featuredProjectsSlugs: ["penna-river-bridge-nellore", "bulk-water-intake-jackwell-system"]
+  },
+  {
+    id: "rcc-works",
+    slug: "rcc-works",
+    title: "Heavy RCC Works & Structural Concrete",
+    shortDescription: "Monolithic reinforced cement concrete structures, heavy raft foundations, retaining walls, overhead water reservoirs (OHT), and retaining structures.",
+    fullDescription: "Reinforced Cement Concrete (RCC) constitutes the structural backbone of every modern infrastructure project. JP Constructions specializes in high-tolerance heavy RCC execution—spanning multi-meter thick foundation rafts, retaining walls, overhead reservoirs, heavy bridge piers, and industrial machine foundations designed for extreme seismic and load conditions.",
+    category: "rcc-works",
+    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80",
+    iconName: "Layers",
+    scopeOfWork: [
+      "Heavy monolithic foundation rafts and vibratory machine basements",
+      "High-capacity RCC Overhead Water Reservoirs (OHT) and Ground Reservoirs (GLR)",
+      "Cantilever and counterfort retaining walls for highway and railway embankments",
+      "Heavy load-bearing columns, shear walls, transfer girders, and podium slabs",
+      "Seismic-resistant structural RCC frameworks adhering to IS 456 & IS 13920",
+      "Self-compacting concrete (SCC) pours for congested rebar structural nodes"
+    ],
+    benefits: [
+      "Strict compliance with IS 456, IS 1893 (Earthquake), and IS 3370 (Liquid Storage)",
+      "Automated batching control guaranteeing consistent M40 to M60 concrete grades",
+      "Laser-controlled formwork ensuring crisp alignment and superior surface finish",
+      "100% cube testing at 7 and 28 days with certified laboratory compliance"
+    ],
+    process: [
+      { step: 1, title: "Structural Analysis & Rebar Detailing", description: "BBS preparation and clash mitigation for dense rebar nodes." },
+      { step: 2, title: "Precision Shuttering & Scaffolding", description: "Heavy-duty steel ply panels with water-tight joints and tie-rod systems." },
+      { step: 3, title: "High-Tensile TMT Steel Binding", description: "Fe 550D rebar placement with certified cover blocks and chair supports." },
+      { step: 4, title: "Controlled Automated Concrete Pour", description: "Continuous pumping with high-frequency immersion vibrators to eliminate voids." },
+      { step: 5, title: "Regulated Curing & Strength Verification", description: "Membrane curing or ponding for 14+ days, followed by rebound hammer tests." }
+    ],
+    equipmentUsed: [
+      "Stationary & Truck-Mounted Concrete Boom Placers",
+      "High-Frequency Electric & Pneumatic Needle Vibrators",
+      "Heavy-Duty Steel & Plywood Shuttering Systems",
+      "Rebar Bending & Cutting Automated Machines"
+    ],
+    featuredProjectsSlugs: ["coastal-commercial-plaza-kakinada", "heavy-rcc-retaining-infrastructure"]
   }
 ];

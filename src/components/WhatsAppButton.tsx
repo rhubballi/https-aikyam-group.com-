@@ -1,10 +1,25 @@
 import React from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, Phone } from 'lucide-react';
 import { companyProfile } from '../data/companyData';
 
 export const WhatsAppButton: React.FC = () => {
   return (
-    <aside aria-label="Quick WhatsApp Contact" className="fixed bottom-6 right-6 z-40">
+    <aside aria-label="Quick Communication Actions" className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      {/* 1. Quick Call Action */}
+      <a
+        href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
+        aria-label="Direct Phone Call to JP Constructions"
+        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+      >
+        <div className="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+          <Phone className="w-3.5 h-3.5 fill-current" />
+        </div>
+        <span className="text-xs font-bold tracking-wide hidden sm:inline text-slate-700">
+          Call: {companyProfile.contact.displayPhone}
+        </span>
+      </a>
+
+      {/* 2. Direct WhatsApp Action */}
       <a
         href={companyProfile.contact.whatsappLink}
         target="_blank"
@@ -19,7 +34,7 @@ export const WhatsAppButton: React.FC = () => {
 
         <MessageSquare className="w-5 h-5 fill-current" />
         <span className="text-xs font-bold tracking-wide hidden sm:inline">
-          Direct WhatsApp
+          Direct WhatsApp Chat
         </span>
       </a>
     </aside>

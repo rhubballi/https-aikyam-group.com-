@@ -13,7 +13,10 @@ import {
   Home,
   Factory,
   Wrench,
-  TrainTrack
+  TrainTrack,
+  Truck,
+  Droplets,
+  Layers
 } from 'lucide-react';
 import { companyProfile } from '../data/companyData';
 
@@ -46,6 +49,9 @@ export const Navbar: React.FC = () => {
       subItems: [
         { name: 'All Services Overview', path: '/services', icon: HardHat },
         { name: 'Infrastructure & Bridges', path: '/services/infrastructure', icon: HardHat },
+        { name: 'Roads & Highways', path: '/services/roads', icon: Truck },
+        { name: 'Pipelines & Water Infrastructure', path: '/services/pipelines', icon: Droplets },
+        { name: 'Heavy RCC Works & Foundations', path: '/services/rcc-works', icon: Layers },
         { name: 'Railway Corridors & ROR', path: '/services/railways', icon: TrainTrack },
         { name: 'Industrial & Heavy Workshops', path: '/services/industrial', icon: Factory },
         { name: 'Commercial Construction', path: '/services/commercial', icon: Building2 },
@@ -54,6 +60,7 @@ export const Navbar: React.FC = () => {
       ]
     },
     { name: 'Projects', path: '/projects' },
+    { name: 'Machinery Fleet', path: '/machinery' },
     { name: 'Our Team', path: '/team' },
     { name: 'Contact', path: '/contact' },
   ];

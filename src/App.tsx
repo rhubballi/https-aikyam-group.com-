@@ -18,6 +18,7 @@ import {
 import { ProjectsPortfolio } from './pages/ProjectsPortfolio';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { OurTeam } from './pages/OurTeam';
+import { MachineryPage } from './pages/MachineryPage';
 import { ContactUs } from './pages/ContactUs';
 import { RequestQuotePage } from './pages/RequestQuotePage';
 import { AdminDashboard } from './pages/AdminDashboard';
@@ -77,6 +78,9 @@ export const App: React.FC = () => {
 
           {/* 11. Our Team */}
           <Route path="/team" element={<OurTeam />} />
+
+          {/* Plant & Machinery Fleet */}
+          <Route path="/machinery" element={<MachineryPage />} />
 
           {/* 12. Contact Us */}
           <Route path="/contact" element={<ContactUs />} />

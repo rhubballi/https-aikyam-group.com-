@@ -17,7 +17,10 @@ export const ProjectsPortfolio: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'All Projects' },
-    { id: 'infrastructure', label: 'Major Bridges' },
+    { id: 'infrastructure', label: 'Bridges & Dams' },
+    { id: 'roads', label: 'Roads & Highways' },
+    { id: 'pipelines', label: 'Pipelines & Water' },
+    { id: 'rcc-works', label: 'Heavy RCC' },
     { id: 'railways', label: 'Railway & ROR' },
     { id: 'industrial', label: 'Industrial & Workshops' },
     { id: 'commercial', label: 'Commercial' },

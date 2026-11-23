@@ -64,6 +64,21 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/services/roads" className="hover:text-amber-400 transition-colors">
+                  Roads & Highways
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/pipelines" className="hover:text-amber-400 transition-colors">
+                  Pipelines & Water Infrastructure
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/rcc-works" className="hover:text-amber-400 transition-colors">
+                  Heavy RCC Works & Foundations
+                </Link>
+              </li>
+              <li>
                 <Link to="/services/railways" className="hover:text-amber-400 transition-colors">
                   Railway Corridors & ROR
                 </Link>
@@ -105,6 +120,11 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/projects" className="hover:text-amber-400 transition-colors">
                   Project Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link to="/machinery" className="hover:text-amber-400 transition-colors">
+                  Plant & Machinery Fleet
                 </Link>
               </li>
               <li>

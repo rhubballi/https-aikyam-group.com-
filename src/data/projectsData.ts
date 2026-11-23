@@ -383,5 +383,87 @@ export const initialProjects: Project[] = [
       { label: "Jacking System", value: "Synchronous Multi-Port Hydraulic Jacks" },
       { label: "Life Extension", value: "30+ Years Projected" }
     ]
+  },
+  {
+    id: "nh-7-six-lane-highway-corridor",
+    slug: "nh-7-six-lane-highway-corridor",
+    title: "NH-7 Six-Lane Highway Expansion & Rigid Pavement Works",
+    shortDescription: "Heavy PQC rigid concrete road construction, earthwork formations, grade-separated intersections, and stormwater cross-drainage culverts.",
+    fullDescription: "Demonstrating high-output highway engineering, this roadway package required high-strength Pavement Quality Concrete (PQC) and heavy bituminous asphalt laying for heavy commercial transport corridors. Executed with electronic sensor pavers and 12-ton vibratory compaction fleets, the corridor adheres to rigorous MoRTH and IRC express-corridor standards.",
+    category: "roads",
+    categoryLabel: "Roads & Highways",
+    client: "National Highway Authority / EPC JV",
+    principalContractor: "JP Constructions",
+    location: "Bangalore North Corridor",
+    state: "Karnataka",
+    year: "2023",
+    completionDate: "December 2023",
+    status: "completed",
+    isVerified: true,
+    isFeatured: true,
+    heroImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1600&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+    ],
+    scopeOfWork: [
+      "Subgrade cutting, filling, and heavy mechanical stabilization with 12T vibro rollers",
+      "Pavement Quality Concrete (PQC) paving with automatic dowel bar insertion",
+      "High-clearance RCC box culverts and roadside stormwater drainage flumes",
+      "Bituminous concrete wearing course with anti-skid friction layers",
+      "Crash barriers, retro-reflective cautionary signage, and lane demarcations"
+    ],
+    engineeringHighlights: [
+      "High pavement smoothness index with IRI below 1.8 m/km",
+      "Executed alongside live traffic flows with zero accidents or vehicle holdups"
+    ],
+    specs: [
+      { label: "Pavement Type", value: "PQC Rigid & Heavy Bituminous" },
+      { label: "Corridor Width", value: "6-Lane Dual Carriageway" },
+      { label: "Compaction", value: "98%+ Modified Proctor Density" },
+      { label: "Design Life", value: "30 Years Heavy Axle Rating" }
+    ]
+  },
+  {
+    id: "bulk-water-intake-jackwell-system",
+    slug: "bulk-water-intake-jackwell-system",
+    title: "Bulk Water Transmission Pipeline & River Intake Jackwell",
+    shortDescription: "Deep pneumatic caisson intake jackwell, high-head pumphouse, and 24km large-diameter Ductile Iron (DI) water pipeline network.",
+    fullDescription: "Engineering critical water security, this project entailed deep well caisson sinking into riverbed alluvial strata to construct a heavy intake jackwell, an adjoining high-capacity RCC pumphouse, and trenching/laying of 24 kilometers of high-pressure Ductile Iron (DI) transmission mains tested under stringent hydrostatic parameters.",
+    category: "pipelines",
+    categoryLabel: "Pipelines & Water Infrastructure",
+    client: "Municipal Water Board & Industrial Development Corp",
+    principalContractor: "JP Constructions",
+    location: "Godavari River Basin",
+    state: "Andhra Pradesh",
+    year: "2024",
+    completionDate: "May 2024",
+    status: "completed",
+    isVerified: true,
+    isFeatured: true,
+    heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
+    ],
+    scopeOfWork: [
+      "Pneumatic caisson sinking for 12-meter diameter river intake jackwell",
+      "Heavy RCC pump floor casting and electrical substation integration",
+      "Trenching, bedding, and laying of Class K9 Ductile Iron (DI) pipelines",
+      "RCC thrust blocks, sluice valve chambers, and air relief installations",
+      "Sectional hydrostatic testing up to 16 kg/cm² pressure"
+    ],
+    engineeringHighlights: [
+      "Jackwell sunken 16 meters below water level with zero tilting or water ingress",
+      "100% leak-free clearance across the entire 24 km transmission corridor"
+    ],
+    specs: [
+      { label: "Jackwell Diameter", value: "12.0 Meters RCC Monolithic" },
+      { label: "Pipeline Spec", value: "Class K9 Ductile Iron (DI)" },
+      { label: "Corridor Length", value: "24 Kilometers" },
+      { label: "Test Pressure", value: "16 kg/cm² Hydrostatic" }
+    ]
   }
 ];

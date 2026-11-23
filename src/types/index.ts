@@ -4,9 +4,24 @@ export type ProjectCategory =
   | 'industrial'
   | 'commercial'
   | 'residential'
-  | 'renovation';
+  | 'renovation'
+  | 'roads'
+  | 'pipelines'
+  | 'rcc-works';
 
 export type ProjectStatus = 'completed' | 'ongoing' | 'tender';
+
+export interface MachineryItem {
+  id: string;
+  name: string;
+  category: 'concreting' | 'earthmoving' | 'road' | 'lifting';
+  categoryLabel: string;
+  capacity: string;
+  unitsCount: number;
+  description: string;
+  image: string;
+  specs: { label: string; value: string }[];
+}
 
 export interface ProjectSpec {
   label: string;

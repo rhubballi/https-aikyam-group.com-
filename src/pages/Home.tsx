@@ -12,7 +12,12 @@ import {
   Wrench,
   ChevronRight,
   Calculator,
-  Award
+  Award,
+  Truck,
+  Droplets,
+  Layers,
+  Phone,
+  MessageSquare
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
@@ -21,6 +26,8 @@ import { ProcessTimeline } from '../components/ProcessTimeline';
 import { QuoteForm } from '../components/QuoteForm';
 import { CostEstimatorModal } from '../components/CostEstimatorModal';
 import { SafeImage } from '../components/SafeImage';
+import { MachineryFleet } from '../components/MachineryFleet';
+import { WhyChooseUs } from '../components/WhyChooseUs';
 import { companyProfile, verifiedStats, clientTestimonials } from '../data/companyData';
 import { initialProjects } from '../data/projectsData';
 import { servicesData } from '../data/servicesData';
@@ -215,6 +222,50 @@ export const Home: React.FC = () => {
       </section>
 
       {/* =========================================================================
+          2B. QUICK CONSULTATION ACTION STRIP (Direct Call / WhatsApp / Estimator)
+         ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-slate-950 rounded-3xl p-6 sm:p-8 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center md:text-left">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-slate-950/80 block">
+              Planning an Infrastructure Tender or Construction Project?
+            </span>
+            <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-950">
+              Speak Directly With Our Project Director
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-900/90 font-medium max-w-2xl">
+              From site feasibility and BOQ estimations to end-to-end turnkey civil execution, receive verified engineering guidance within 24 hours.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <a
+              href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
+              className="px-6 py-3.5 rounded-xl bg-slate-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-900 transition-colors flex items-center gap-2 shadow-sm"
+            >
+              <Phone className="w-4 h-4 text-amber-400" />
+              <span>Call: {companyProfile.contact.displayPhone}</span>
+            </a>
+            <a
+              href={companyProfile.contact.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 shadow-sm"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>WhatsApp Direct</span>
+            </a>
+            <button
+              onClick={() => setEstimatorOpen(true)}
+              className="px-6 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
+            >
+              <Calculator className="w-4 h-4 text-amber-700" />
+              <span>Instant Cost Estimator</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
           3. COMPANY OVERVIEW & 20+ YEARS LEGACY
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -320,6 +371,9 @@ export const Home: React.FC = () => {
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
                   {svc.category === 'infrastructure' && <HardHat className="w-6 h-6" />}
+                  {svc.category === 'roads' && <Truck className="w-6 h-6" />}
+                  {svc.category === 'pipelines' && <Droplets className="w-6 h-6" />}
+                  {svc.category === 'rcc-works' && <Layers className="w-6 h-6" />}
                   {svc.category === 'railways' && <TrainTrack className="w-6 h-6" />}
                   {svc.category === 'industrial' && <Factory className="w-6 h-6" />}
                   {svc.category === 'commercial' && <Building2 className="w-6 h-6" />}
@@ -390,9 +444,12 @@ export const Home: React.FC = () => {
         <div className="flex overflow-x-auto gap-2 pb-4 mb-8 scrollbar-none">
           {[
             { id: 'all', label: 'All Featured' },
-            { id: 'infrastructure', label: 'Major Bridges' },
+            { id: 'infrastructure', label: 'Bridges & Dams' },
+            { id: 'roads', label: 'Roads & Highways' },
+            { id: 'pipelines', label: 'Pipelines & Water' },
+            { id: 'rcc-works', label: 'Heavy RCC' },
             { id: 'railways', label: 'Rail Corridors & ROR' },
-            { id: 'industrial', label: 'Industrial & Workshops' },
+            { id: 'industrial', label: 'Industrial Plants' },
             { id: 'commercial', label: 'Commercial' },
             { id: 'residential', label: 'Residential' },
           ].map(tab => (
@@ -416,6 +473,20 @@ export const Home: React.FC = () => {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
+      </section>
+
+      {/* =========================================================================
+          5B. WHY CHOOSE US / KEY ENGINEERING STRENGTHS
+         ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <WhyChooseUs />
+      </section>
+
+      {/* =========================================================================
+          5C. HEAVY PLANT & MACHINERY FLEET
+         ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <MachineryFleet />
       </section>
 
       {/* =========================================================================
