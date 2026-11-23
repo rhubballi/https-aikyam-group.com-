@@ -6,6 +6,7 @@ import {
   CheckCircle2 
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { SafeImage } from '../components/SafeImage';
 import { servicesData } from '../data/servicesData';
 
 export const ServicesOverview: React.FC = () => {
@@ -53,7 +54,7 @@ export const ServicesOverview: React.FC = () => {
                   {/* Visual Preview */}
                   <div className={`lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}>
                     <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-100 shadow-md group">
-                      <img
+                      <SafeImage
                         src={svc.heroImage}
                         alt={svc.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

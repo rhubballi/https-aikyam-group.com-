@@ -20,6 +20,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { ProcessTimeline } from '../components/ProcessTimeline';
 import { QuoteForm } from '../components/QuoteForm';
 import { CostEstimatorModal } from '../components/CostEstimatorModal';
+import { SafeImage } from '../components/SafeImage';
 import { companyProfile, verifiedStats, clientTestimonials } from '../data/companyData';
 import { initialProjects } from '../data/projectsData';
 import { servicesData } from '../data/servicesData';
@@ -50,7 +51,7 @@ export const Home: React.FC = () => {
          ========================================================================= */}
       <section className="relative min-h-[88vh] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-gradient-to-b from-slate-100/80 via-white to-slate-50 border-b border-slate-200/80">
         <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-          <img
+          <SafeImage
             src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=2000&q=85"
             alt="JP Constructions Major River Bridge Engineering"
             className="w-full h-full object-cover object-center filter grayscale contrast-125"
@@ -148,7 +149,7 @@ export const Home: React.FC = () => {
                 </div>
 
                 <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 shadow-sm">
-                  <img
+                  <SafeImage
                     src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=800&q=80"
                     alt="Penna River Bridge Nellore"
                     className="w-full h-full object-cover"
@@ -268,8 +269,8 @@ export const Home: React.FC = () => {
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=800&q=80"
+                <SafeImage
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
                   alt="Civil Engineering Execution"
                   className="w-full h-full object-cover"
                 />
@@ -287,7 +288,7 @@ export const Home: React.FC = () => {
                 <span className="text-xs text-slate-600 block mt-1">Santhi Nagar Hub</span>
               </div>
               <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md">
-                <img
+                <SafeImage
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
                   alt="Industrial Construction"
                   className="w-full h-full object-cover"

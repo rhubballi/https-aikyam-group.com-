@@ -15,6 +15,7 @@ import {
   ShieldCheck 
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { SafeImage } from '../components/SafeImage';
 import { QuoteRequest, Project } from '../types';
 import { quoteService, projectService, isSupabaseConfigured } from '../lib/supabase';
 
@@ -526,7 +527,7 @@ export const AdminDashboard: React.FC = () => {
                 className="bg-white border border-slate-200 rounded-3xl p-5 space-y-3 relative overflow-hidden shadow-xs"
               >
                 <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 mb-2">
-                  <img src={p.heroImage} alt={p.title} className="w-full h-full object-cover" />
+                  <SafeImage src={p.heroImage} alt={p.title} className="w-full h-full object-cover" />
                 </div>
 
                 <div className="flex justify-between items-start">

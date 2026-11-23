@@ -11,6 +11,7 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { QuoteForm } from '../components/QuoteForm';
 import { ProjectCard } from '../components/ProjectCard';
+import { SafeImage } from '../components/SafeImage';
 import { servicesData } from '../data/servicesData';
 import { initialProjects } from '../data/projectsData';
 
@@ -56,7 +57,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 p-8 sm:p-14 shadow-md">
           <div className="absolute inset-0 z-0">
-            <img
+            <SafeImage
               src={service.heroImage}
               alt={service.title}
               className="w-full h-full object-cover brightness-[0.9] contrast-105 opacity-15"

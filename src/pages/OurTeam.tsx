@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
+import { SafeImage } from '../components/SafeImage';
 import { leadershipTeam, companyProfile } from '../data/companyData';
 
 export const OurTeam: React.FC = () => {
@@ -54,7 +55,7 @@ export const OurTeam: React.FC = () => {
             >
               <div>
                 <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                  <img
+                  <SafeImage
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

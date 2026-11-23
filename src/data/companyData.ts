@@ -36,12 +36,12 @@ export const companyProfile = {
   ],
   verifiedClients: [
     { name: "Rail Vikas Nigam Limited", shortName: "RVNL", category: "Govt of India Enterprise", logoUrl: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=300&q=80" },
-    { name: "Tata Projects Limited", shortName: "TATA PROJECTS", category: "EPC Conglomerate", logoUrl: "https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=300&q=80" },
+    { name: "Tata Projects Limited", shortName: "TATA PROJECTS", category: "EPC Conglomerate", logoUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=300&q=80" },
     { name: "Larsen & Toubro", shortName: "L&T", category: "Infrastructure Giant", logoUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=300&q=80" },
     { name: "KEC International Ltd.", shortName: "KEC", category: "Global Infrastructure EPC", logoUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=300&q=80" },
     { name: "South Central Railway", shortName: "SCR", category: "Indian Railways", logoUrl: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=300&q=80" },
     { name: "Southern Railway", shortName: "SR", category: "Indian Railways", logoUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=300&q=80" },
-    { name: "South Western Railway", shortName: "SWR", category: "Indian Railways", logoUrl: "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=300&q=80" },
+    { name: "South Western Railway", shortName: "SWR", category: "Indian Railways", logoUrl: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=300&q=80" },
     { name: "Gayatri Projects Limited", shortName: "GPL", category: "Civil Engineering JV", logoUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80" },
     { name: "Dedicated Freight Corridor", shortName: "DFCCIL", category: "Special Freight Corridors", logoUrl: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=300&q=80" },
     { name: "GVPR Engineers Limited", shortName: "GVPR", category: "Heavy Infrastructure", logoUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=300&q=80" }

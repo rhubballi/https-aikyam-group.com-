@@ -17,6 +17,7 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { ProjectCard } from '../components/ProjectCard';
 import { QuoteForm } from '../components/QuoteForm';
+import { SafeImage } from '../components/SafeImage';
 import { initialProjects } from '../data/projectsData';
 
 export const ProjectDetail: React.FC = () => {
@@ -78,7 +79,7 @@ export const ProjectDetail: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-md">
           <div className="aspect-[21/9] min-h-[360px] sm:min-h-[460px] relative">
-            <img
+            <SafeImage
               src={project.heroImage}
               alt={project.title}
               className="w-full h-full object-cover brightness-[0.7] contrast-110"
@@ -202,7 +203,7 @@ export const ProjectDetail: React.FC = () => {
                       onClick={() => setActiveLightboxImg(img)}
                       className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 border border-slate-200 hover:border-amber-400 transition-all cursor-pointer shadow-xs"
                     >
-                      <img
+                      <SafeImage
                         src={img}
                         alt={`${project.title} photo ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

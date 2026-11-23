@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
+import { SafeImage } from '../components/SafeImage';
 import { companyProfile, leadershipTeam } from '../data/companyData';
 
 export const AboutUs: React.FC = () => {
@@ -86,8 +87,8 @@ export const AboutUs: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-4">
             <div className="relative rounded-3xl overflow-hidden bg-slate-100 aspect-[16/10] shadow-md border border-slate-200">
-              <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=80"
+              <SafeImage
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
                 alt="JP Constructions site engineers inspecting reinforcement"
                 className="w-full h-full object-cover"
               />
@@ -155,7 +156,7 @@ export const AboutUs: React.FC = () => {
             >
               <div>
                 <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                  <img
+                  <SafeImage
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

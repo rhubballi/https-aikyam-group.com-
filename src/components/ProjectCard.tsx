@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Calendar, CheckCircle2, Building, Sparkles } from 'lucide-react';
 import { Project } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface ProjectCardProps {
   project: Project;
@@ -17,10 +18,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
       <div className={`relative overflow-hidden bg-slate-100 ${
         featured ? 'md:w-1/2 aspect-[16/10] md:aspect-auto' : 'aspect-[16/10]'
       }`}>
-        <img
+        <SafeImage
           src={project.heroImage}
           alt={project.title}
-          loading="lazy"
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
