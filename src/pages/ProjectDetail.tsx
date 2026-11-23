@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { 
-  ArrowRight, 
   MapPin, 
   Calendar, 
   Building, 
   CheckCircle2, 
-  ShieldCheck, 
   ChevronRight,
   Maximize2,
   X,
@@ -31,13 +29,12 @@ export const ProjectDetail: React.FC = () => {
     return <Navigate to="/projects" replace />;
   }
 
-  // Related projects
   const relatedProjects = initialProjects
     .filter(p => p.id !== project.id && (p.category === project.category || p.isFeatured))
     .slice(0, 3);
 
   return (
-    <div className="space-y-16 pb-16 pt-6">
+    <div className="space-y-16 pb-16 pt-6 bg-slate-50">
       <SEO 
         title={`${project.title} — Engineering Case Study`}
         description={project.shortDescription}
@@ -48,12 +45,12 @@ export const ProjectDetail: React.FC = () => {
       {/* Lightbox Modal */}
       {activeLightboxImg && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setActiveLightboxImg(null)}
         >
           <button
             onClick={() => setActiveLightboxImg(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors"
+            className="absolute top-6 right-6 p-2 rounded-full bg-white text-slate-800 hover:bg-slate-100 shadow-md transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -68,65 +65,65 @@ export const ProjectDetail: React.FC = () => {
 
       {/* Breadcrumb Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center gap-2 text-xs text-slate-400">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <Link to="/projects" className="hover:text-white transition-colors">Projects</Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-amber-400 font-semibold truncate max-w-xs">{project.title}</span>
+        <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+          <Link to="/" className="hover:text-slate-900 transition-colors">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
+          <Link to="/projects" className="hover:text-slate-900 transition-colors">Projects</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
+          <span className="text-amber-800 font-bold truncate max-w-xs">{project.title}</span>
         </nav>
       </div>
 
       {/* Hero Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
-          <div className="aspect-[21/9] min-h-[360px] sm:min-h-[480px] relative">
+        <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-md">
+          <div className="aspect-[21/9] min-h-[360px] sm:min-h-[460px] relative">
             <img
               src={project.heroImage}
               alt={project.title}
-              className="w-full h-full object-cover brightness-[0.4] contrast-125"
+              className="w-full h-full object-cover brightness-[0.7] contrast-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
 
             {/* Badges Overlay */}
             <div className="absolute top-6 left-6 flex flex-wrap gap-2 z-10">
               {project.isVerified ? (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 shadow-md">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 shadow-md">
                   <CheckCircle2 className="w-4 h-4 text-slate-950" />
                   Verified Client Infrastructure
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900/90 backdrop-blur-md text-amber-300 border border-amber-500/30">
-                  <Sparkles className="w-4 h-4 text-amber-400" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/95 backdrop-blur-md text-slate-800 shadow-md border border-slate-200">
+                  <Sparkles className="w-4 h-4 text-amber-600" />
                   Configurable Engineering Model
                 </span>
               )}
 
-              <span className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/90 backdrop-blur-md text-slate-200 border border-slate-700">
+              <span className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/95 backdrop-blur-md text-slate-800 shadow-md border border-slate-200">
                 {project.categoryLabel}
               </span>
             </div>
 
             {/* Title & Metadata Overlay */}
             <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 space-y-3 z-10">
-              <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300">
-                <span className="flex items-center gap-1 text-amber-400 font-semibold">
+              <div className="flex flex-wrap items-center gap-4 text-xs text-slate-200">
+                <span className="flex items-center gap-1 text-amber-300 font-semibold">
                   <MapPin className="w-3.5 h-3.5" />
                   {project.location}, {project.state}
                 </span>
                 <span>•</span>
-                <span className="flex items-center gap-1 text-slate-300">
+                <span className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" />
                   Commissioned / Year: {project.year}
                 </span>
                 <span>•</span>
-                <span className="flex items-center gap-1 text-amber-300">
+                <span className="flex items-center gap-1 text-amber-200">
                   <Building className="w-3.5 h-3.5" />
                   Client: {project.client}
                 </span>
               </div>
 
-              <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight max-w-4xl">
+              <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight max-w-4xl drop-shadow-sm">
                 {project.title}
               </h1>
             </div>
@@ -141,48 +138,48 @@ export const ProjectDetail: React.FC = () => {
           {/* Left Column: Story, Scope & Engineering Highlights */}
           <div className="lg:col-span-8 space-y-10">
             {/* Overview */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-4">
-              <h2 className="font-display text-2xl font-bold text-white">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-4 shadow-sm">
+              <h2 className="font-display text-2xl font-bold text-slate-900">
                 Project Overview & Engineering Background
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 {project.fullDescription}
               </p>
 
               {project.testimonialSnippet && (
-                <div className="mt-4 p-5 rounded-2xl bg-slate-950 border-l-4 border-amber-500 text-xs sm:text-sm text-slate-300 italic">
+                <div className="mt-4 p-5 rounded-2xl bg-amber-50/80 border-l-4 border-amber-500 text-xs sm:text-sm text-slate-700 italic">
                   "{project.testimonialSnippet}"
                 </div>
               )}
             </div>
 
             {/* Scope of Work */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-4">
-              <h3 className="font-display text-xl font-bold text-white flex items-center gap-2">
-                <Layers className="w-5 h-5 text-amber-400" />
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-4 shadow-sm">
+              <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
+                <Layers className="w-5 h-5 text-amber-600" />
                 <span>Scope of Civil & Structural Works</span>
               </h3>
               <div className="space-y-2.5">
                 {project.scopeOfWork.map((scope, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{scope}</span>
+                  <div key={idx} className="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200/80 text-xs sm:text-sm text-slate-800">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span className="font-medium">{scope}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Engineering Highlights */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-4">
-              <h3 className="font-display text-xl font-bold text-white flex items-center gap-2">
-                <Award className="w-5 h-5 text-amber-400" />
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-4 shadow-sm">
+              <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
+                <Award className="w-5 h-5 text-amber-600" />
                 <span>Engineering & Execution Highlights</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
                 {project.engineeringHighlights.map((hl, idx) => (
-                  <div key={idx} className="bg-slate-950 p-4 rounded-xl border border-slate-800/80 text-slate-200">
-                    <span className="text-amber-400 font-bold block mb-1">Key Parameter 0{idx + 1}</span>
-                    <span>{hl}</span>
+                  <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 text-slate-800">
+                    <span className="text-amber-800 font-bold block mb-1">Key Parameter 0{idx + 1}</span>
+                    <span className="font-medium">{hl}</span>
                   </div>
                 ))}
               </div>
@@ -190,12 +187,12 @@ export const ProjectDetail: React.FC = () => {
 
             {/* Photo Gallery Grid */}
             {project.galleryImages && project.galleryImages.length > 0 && (
-              <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-4">
+              <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-4 shadow-sm">
                 <div className="flex justify-between items-center">
-                  <h3 className="font-display text-xl font-bold text-white">
+                  <h3 className="font-display text-xl font-bold text-slate-900">
                     Project Gallery & Site Photographs
                   </h3>
-                  <span className="text-xs text-slate-400">Click to view high-res</span>
+                  <span className="text-xs text-slate-500 font-medium">Click to view high-res</span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -203,14 +200,14 @@ export const ProjectDetail: React.FC = () => {
                     <button
                       key={idx}
                       onClick={() => setActiveLightboxImg(img)}
-                      className="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-950 border border-slate-800 hover:border-amber-500/60 transition-all cursor-pointer"
+                      className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 border border-slate-200 hover:border-amber-400 transition-all cursor-pointer shadow-xs"
                     >
                       <img
                         src={img}
                         alt={`${project.title} photo ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <Maximize2 className="w-6 h-6 text-white" />
                       </div>
                     </button>
@@ -222,36 +219,35 @@ export const ProjectDetail: React.FC = () => {
 
           {/* Right Column: Technical Specs Card & Enquiry Action */}
           <div className="lg:col-span-4 space-y-6">
-            {/* Technical Specs Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-5 shadow-xl sticky top-28">
-              <div className="border-b border-slate-800 pb-4">
-                <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm sticky top-28">
+              <div className="border-b border-slate-100 pb-4">
+                <span className="text-xs uppercase font-bold text-amber-700 tracking-wider">
                   Technical Parameters
                 </span>
-                <h3 className="font-display text-xl font-bold text-white mt-0.5">
+                <h3 className="font-display text-xl font-bold text-slate-900 mt-0.5">
                   Structural Specifications
                 </h3>
               </div>
 
               <div className="space-y-3">
                 {project.specs.map((sp, idx) => (
-                  <div key={idx} className="flex justify-between items-start text-xs border-b border-slate-800/60 pb-2.5">
-                    <span className="text-slate-400 font-medium">{sp.label}</span>
-                    <span className="text-white font-bold text-right ml-2">{sp.value}</span>
+                  <div key={idx} className="flex justify-between items-start text-xs border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-medium">{sp.label}</span>
+                    <span className="text-slate-900 font-bold text-right ml-2">{sp.value}</span>
                   </div>
                 ))}
 
-                <div className="flex justify-between items-start text-xs border-b border-slate-800/60 pb-2.5">
-                  <span className="text-slate-400 font-medium">Status</span>
-                  <span className={`font-bold capitalize ${project.status === 'completed' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                <div className="flex justify-between items-start text-xs border-b border-slate-100 pb-2.5">
+                  <span className="text-slate-500 font-medium">Status</span>
+                  <span className={`font-bold capitalize ${project.status === 'completed' ? 'text-emerald-700' : 'text-amber-700'}`}>
                     {project.status}
                   </span>
                 </div>
 
                 {project.principalContractor && (
-                  <div className="flex justify-between items-start text-xs border-b border-slate-800/60 pb-2.5">
-                    <span className="text-slate-400 font-medium">Principal Contractor</span>
-                    <span className="text-slate-200 font-semibold text-right">{project.principalContractor}</span>
+                  <div className="flex justify-between items-start text-xs border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-medium">Principal Contractor</span>
+                    <span className="text-slate-800 font-bold text-right">{project.principalContractor}</span>
                   </div>
                 )}
               </div>
@@ -259,7 +255,7 @@ export const ProjectDetail: React.FC = () => {
               <div className="pt-2">
                 <a
                   href="#enquiry-form"
-                  className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-lg shadow-amber-500/20"
+                  className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
                 >
                   <FileText className="w-4 h-4" />
                   <span>Enquire For Similar Project</span>

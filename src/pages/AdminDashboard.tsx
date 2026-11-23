@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Lock, 
-  Unlock, 
   Layers, 
   FileText, 
   Plus, 
   Trash2, 
-  Edit3, 
   Download, 
-  CheckCircle2, 
   AlertCircle, 
   Database, 
   RefreshCw, 
-  ExternalLink,
-  Search,
-  Check,
-  X,
-  Eye,
-  Sliders,
-  ShieldCheck
+  Search, 
+  X, 
+  Eye, 
+  ShieldCheck 
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { QuoteRequest, Project, ProjectCategory } from '../types';
+import { QuoteRequest, Project } from '../types';
 import { quoteService, projectService, isSupabaseConfigured } from '../lib/supabase';
-import { initialProjects } from '../data/projectsData';
 
 export const AdminDashboard: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
@@ -33,23 +26,17 @@ export const AdminDashboard: React.FC = () => {
   const [passwordInput, setPasswordInput] = useState('');
   const [authError, setAuthError] = useState<string | null>(null);
 
-  // Tabs
   const [activeTab, setActiveTab] = useState<'enquiries' | 'projects' | 'database'>('enquiries');
 
-  // Enquiries State
   const [enquiries, setEnquiries] = useState<QuoteRequest[]>([]);
   const [loadingEnquiries, setLoadingEnquiries] = useState(false);
   const [selectedEnquiry, setSelectedEnquiry] = useState<QuoteRequest | null>(null);
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Projects State
   const [projects, setProjects] = useState<Project[]>([]);
   const [loadingProjects, setLoadingProjects] = useState(false);
-  const [editingProject, setEditingProject] = useState<Project | null>(null);
-  const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
 
-  // Load initial data
   const loadData = async () => {
     setLoadingEnquiries(true);
     setLoadingProjects(true);
@@ -75,7 +62,6 @@ export const AdminDashboard: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setAuthError(null);
-    // Standard secure demo password for testing & administrative access
     if (passwordInput === 'admin123' || passwordInput === 'jpc2026') {
       setIsAuthenticated(true);
       localStorage.setItem('jpc_admin_logged_in', 'true');
@@ -136,7 +122,6 @@ export const AdminDashboard: React.FC = () => {
     document.body.removeChild(link);
   };
 
-  // Filtered enquiries
   const filteredEnquiries = enquiries.filter(e => {
     const matchesStatus = statusFilter === 'all' || e.status === statusFilter;
     const q = searchQuery.toLowerCase();
@@ -148,41 +133,38 @@ export const AdminDashboard: React.FC = () => {
     return matchesStatus && matchesSearch;
   });
 
-  // Login Gate
   if (!isAuthenticated) {
     return (
-      <div className="min-h-[75vh] flex items-center justify-center p-4">
+      <div className="min-h-[75vh] flex items-center justify-center p-4 bg-slate-50">
         <SEO 
           title="Admin Authentication Portal"
           description="Administrative portal for JP Constructions project and quotation management."
           canonicalPath="/admin"
         />
 
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-10 max-w-md w-full shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
-
+        <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 max-w-md w-full shadow-xl relative overflow-hidden">
           <div className="text-center space-y-3 mb-8">
-            <div className="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center mx-auto border border-amber-500/20">
+            <div className="w-14 h-14 bg-amber-50 text-amber-700 rounded-2xl flex items-center justify-center mx-auto border border-amber-200">
               <Lock className="w-7 h-7" />
             </div>
-            <h1 className="font-display text-2xl font-black text-white">
+            <h1 className="font-display text-2xl font-black text-slate-900">
               JP Constructions Portal
             </h1>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-500">
               Administrative management of projects, tenders, and quotation enquiries.
             </p>
           </div>
 
           {authError && (
-            <div className="p-3.5 mb-5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
+            <div className="p-3.5 mb-5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
               <span>{authError}</span>
             </div>
           )}
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs uppercase font-bold text-slate-300 mb-2">
+              <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
                 Administrator Password
               </label>
               <input
@@ -191,27 +173,26 @@ export const AdminDashboard: React.FC = () => {
                 onChange={(e) => setPasswordInput(e.target.value)}
                 placeholder="Enter password..."
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-lg shadow-amber-500/20 cursor-pointer"
+              className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
             >
               Sign In to Portal
             </button>
           </form>
 
-          {/* Quick Demo Access Helper */}
-          <div className="mt-6 pt-5 border-t border-slate-800/80 text-center">
+          <div className="mt-6 pt-5 border-t border-slate-100 text-center">
             <button
               onClick={() => {
                 setPasswordInput('admin123');
                 setIsAuthenticated(true);
                 localStorage.setItem('jpc_admin_logged_in', 'true');
               }}
-              className="text-xs text-amber-400/90 hover:text-amber-300 underline font-medium cursor-pointer"
+              className="text-xs text-amber-800 hover:text-amber-900 underline font-bold cursor-pointer"
             >
               One-Click Demo Administrator Access (admin123)
             </button>
@@ -222,7 +203,7 @@ export const AdminDashboard: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-16 pt-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-16 pt-8 bg-slate-50">
       <SEO 
         title="Admin Control Center"
         description="Portal management for JP Constructions India."
@@ -230,16 +211,16 @@ export const AdminDashboard: React.FC = () => {
       />
 
       {/* Top Header */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
-            <ShieldCheck className="w-4 h-4 text-amber-400" />
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">
+            <ShieldCheck className="w-4 h-4 text-amber-600" />
             <span>Authorized Management Console</span>
           </div>
-          <h1 className="font-display text-2xl sm:text-3xl font-black text-white">
+          <h1 className="font-display text-2xl sm:text-3xl font-black text-slate-900">
             Administrative Control Center
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Manage public project portfolios, review tender quote submissions, and export CRM leads.
           </p>
         </div>
@@ -247,7 +228,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={loadData}
-            className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs flex items-center gap-1.5 transition-colors"
+            className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
             title="Refresh Data"
           >
             <RefreshCw className="w-4 h-4" />
@@ -256,7 +237,7 @@ export const AdminDashboard: React.FC = () => {
 
           <button
             onClick={handleLogout}
-            className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-red-950/60 hover:text-red-400 text-slate-300 text-xs font-semibold transition-colors"
+            className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-red-50 hover:text-red-700 text-slate-700 text-xs font-bold transition-colors cursor-pointer"
           >
             Sign Out
           </button>
@@ -265,54 +246,54 @@ export const AdminDashboard: React.FC = () => {
 
       {/* KPI Stats Strip */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-          <span className="text-xs text-slate-400 uppercase font-bold block">Total Enquiries</span>
-          <span className="font-display text-3xl font-black text-amber-400 mt-1 block">
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+          <span className="text-xs text-slate-500 uppercase font-bold block">Total Enquiries</span>
+          <span className="font-display text-3xl font-black text-amber-700 mt-1 block">
             {enquiries.length}
           </span>
-          <span className="text-[10px] text-slate-500 mt-1 block">
+          <span className="text-[10px] text-slate-500 mt-1 block font-medium">
             {enquiries.filter(e => e.status === 'new').length} New Pending
           </span>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-          <span className="text-xs text-slate-400 uppercase font-bold block">Live Projects</span>
-          <span className="font-display text-3xl font-black text-white mt-1 block">
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+          <span className="text-xs text-slate-500 uppercase font-bold block">Live Projects</span>
+          <span className="font-display text-3xl font-black text-slate-900 mt-1 block">
             {projects.length}
           </span>
-          <span className="text-[10px] text-slate-500 mt-1 block">
+          <span className="text-[10px] text-slate-500 mt-1 block font-medium">
             {projects.filter(p => p.isVerified).length} Verified Works
           </span>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-          <span className="text-xs text-slate-400 uppercase font-bold block">Major Spans Built</span>
-          <span className="font-display text-3xl font-black text-amber-400 mt-1 block">
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+          <span className="text-xs text-slate-500 uppercase font-bold block">Major Spans Built</span>
+          <span className="font-display text-3xl font-black text-amber-700 mt-1 block">
             54+
           </span>
-          <span className="text-[10px] text-slate-500 mt-1 block">Across AP, TN, KA</span>
+          <span className="text-[10px] text-slate-500 mt-1 block font-medium">Across AP, TN, KA</span>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-          <span className="text-xs text-slate-400 uppercase font-bold block">Backend Adapter</span>
-          <span className="font-display text-lg font-bold text-white mt-2 block flex items-center gap-1.5">
-            <span className={`w-2.5 h-2.5 rounded-full ${isSupabaseConfigured ? 'bg-emerald-400' : 'bg-amber-400 animate-pulse'}`}></span>
+        <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm">
+          <span className="text-xs text-slate-500 uppercase font-bold block">Backend Adapter</span>
+          <span className="font-display text-base font-bold text-slate-900 mt-2 block flex items-center gap-1.5">
+            <span className={`w-2.5 h-2.5 rounded-full ${isSupabaseConfigured ? 'bg-emerald-500' : 'bg-amber-500 animate-pulse'}`}></span>
             <span>{isSupabaseConfigured ? 'Supabase Live' : 'Storage Engine'}</span>
           </span>
-          <span className="text-[10px] text-slate-500 mt-1 block">
+          <span className="text-[10px] text-slate-500 mt-1 block font-medium">
             Zero-Breakage Persistence
           </span>
         </div>
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex border-b border-slate-800 gap-4">
+      <div className="flex border-b border-slate-200 gap-4">
         <button
           onClick={() => setActiveTab('enquiries')}
           className={`pb-3 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-colors cursor-pointer ${
             activeTab === 'enquiries'
-              ? 'border-amber-500 text-amber-400'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-600 text-amber-800'
+              : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
           <FileText className="w-4 h-4" />
@@ -323,8 +304,8 @@ export const AdminDashboard: React.FC = () => {
           onClick={() => setActiveTab('projects')}
           className={`pb-3 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-colors cursor-pointer ${
             activeTab === 'projects'
-              ? 'border-amber-500 text-amber-400'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-600 text-amber-800'
+              : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
           <Layers className="w-4 h-4" />
@@ -335,8 +316,8 @@ export const AdminDashboard: React.FC = () => {
           onClick={() => setActiveTab('database')}
           className={`pb-3 text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 border-b-2 transition-colors cursor-pointer ${
             activeTab === 'database'
-              ? 'border-amber-500 text-amber-400'
-              : 'border-transparent text-slate-400 hover:text-slate-200'
+              ? 'border-amber-600 text-amber-800'
+              : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
           <Database className="w-4 h-4" />
@@ -347,8 +328,7 @@ export const AdminDashboard: React.FC = () => {
       {/* TAB 1: ENQUIRIES MANAGER */}
       {activeTab === 'enquiries' && (
         <div className="space-y-6">
-          {/* Controls Bar */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-900 p-4 rounded-2xl border border-slate-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 bg-white p-4 rounded-3xl border border-slate-200 shadow-sm">
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-64">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
@@ -357,14 +337,14 @@ export const AdminDashboard: React.FC = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search client, email or ref..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500"
                 />
               </div>
 
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
+                className="bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500"
               >
                 <option value="all">All Statuses</option>
                 <option value="new">New</option>
@@ -377,23 +357,22 @@ export const AdminDashboard: React.FC = () => {
 
             <button
               onClick={handleExportCSV}
-              className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase flex items-center gap-2 transition-colors w-full sm:w-auto justify-center cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase flex items-center gap-2 transition-colors w-full sm:w-auto justify-center cursor-pointer shadow-sm"
             >
               <Download className="w-4 h-4" />
               <span>Export Leads (CSV)</span>
             </button>
           </div>
 
-          {/* Enquiries Table */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
             {filteredEnquiries.length === 0 ? (
-              <div className="p-12 text-center text-xs text-slate-400">
+              <div className="p-12 text-center text-xs text-slate-500 font-medium">
                 No quote enquiries match your search criteria.
               </div>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-slate-950 text-slate-400 uppercase font-semibold border-b border-slate-800">
+                  <thead className="bg-slate-50 text-slate-600 uppercase font-bold border-b border-slate-200">
                     <tr>
                       <th className="p-4">Reference</th>
                       <th className="p-4">Client Name</th>
@@ -404,38 +383,30 @@ export const AdminDashboard: React.FC = () => {
                       <th className="p-4">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/60">
+                  <tbody className="divide-y divide-slate-100">
                     {filteredEnquiries.map((enq) => (
-                      <tr key={enq.id} className="hover:bg-slate-850/50 transition-colors">
-                        <td className="p-4 font-mono font-bold text-amber-400">
+                      <tr key={enq.id} className="hover:bg-slate-50/70 transition-colors">
+                        <td className="p-4 font-mono font-bold text-amber-800">
                           {enq.referenceNo}
                         </td>
                         <td className="p-4">
-                          <span className="font-bold text-white block">{enq.name}</span>
-                          <span className="text-[11px] text-slate-400">{enq.email}</span>
+                          <span className="font-bold text-slate-900 block">{enq.name}</span>
+                          <span className="text-[11px] text-slate-500">{enq.email}</span>
                         </td>
-                        <td className="p-4 text-slate-300">
+                        <td className="p-4 text-slate-700 font-medium">
                           {enq.projectType}
                         </td>
-                        <td className="p-4 text-slate-400">
+                        <td className="p-4 text-slate-600">
                           {enq.projectLocation}
                         </td>
-                        <td className="p-4 font-medium text-slate-200">
+                        <td className="p-4 font-bold text-slate-800">
                           {enq.approximateBudget}
                         </td>
                         <td className="p-4">
                           <select
                             value={enq.status}
                             onChange={(e) => handleStatusChange(enq.id, e.target.value as any)}
-                            className={`px-2.5 py-1 rounded-md text-[11px] font-bold border ${
-                              enq.status === 'new'
-                                ? 'bg-amber-500/20 text-amber-400 border-amber-500/30'
-                                : enq.status === 'reviewing'
-                                ? 'bg-blue-500/20 text-blue-400 border-blue-500/30'
-                                : enq.status === 'quoted'
-                                ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
-                                : 'bg-slate-800 text-slate-400 border-slate-700'
-                            }`}
+                            className="px-2.5 py-1 rounded-lg text-[11px] font-bold border border-slate-200 bg-slate-50 text-slate-800"
                           >
                             <option value="new">New</option>
                             <option value="reviewing">Reviewing</option>
@@ -447,7 +418,7 @@ export const AdminDashboard: React.FC = () => {
                         <td className="p-4">
                           <button
                             onClick={() => setSelectedEnquiry(enq)}
-                            className="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                            className="p-1.5 rounded-lg bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200 transition-colors"
                             title="View Full Scope"
                           >
                             <Eye className="w-4 h-4" />
@@ -461,65 +432,64 @@ export const AdminDashboard: React.FC = () => {
             )}
           </div>
 
-          {/* Enquiry Detail Drawer / Modal */}
           {selectedEnquiry && (
             <div 
-              className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in"
+              className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
               onClick={() => setSelectedEnquiry(null)}
             >
               <div 
-                className="bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 max-w-lg w-full space-y-5 shadow-2xl relative"
+                className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 max-w-lg w-full space-y-5 shadow-2xl relative"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex justify-between items-start border-b border-slate-800 pb-4">
+                <div className="flex justify-between items-start border-b border-slate-100 pb-4">
                   <div>
-                    <span className="font-mono text-xs font-bold text-amber-400">
+                    <span className="font-mono text-xs font-bold text-amber-800">
                       {selectedEnquiry.referenceNo}
                     </span>
-                    <h3 className="font-display font-bold text-xl text-white mt-0.5">
+                    <h3 className="font-display font-bold text-xl text-slate-900 mt-0.5">
                       {selectedEnquiry.name}
                     </h3>
-                    <span className="text-xs text-slate-400">{selectedEnquiry.email} • {selectedEnquiry.phone}</span>
+                    <span className="text-xs text-slate-500 font-medium">{selectedEnquiry.email} • {selectedEnquiry.phone}</span>
                   </div>
                   <button
                     onClick={() => setSelectedEnquiry(null)}
-                    className="p-1 text-slate-400 hover:text-white"
+                    className="p-1 text-slate-400 hover:text-slate-700"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
 
                 <div className="space-y-3 text-xs">
-                  <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
-                    <span className="text-slate-400 block uppercase font-bold text-[10px]">Project Scope / Description:</span>
-                    <p className="text-slate-200 leading-relaxed">{selectedEnquiry.projectDescription}</p>
+                  <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-1">
+                    <span className="text-slate-500 block uppercase font-bold text-[10px]">Project Scope / Description:</span>
+                    <p className="text-slate-800 leading-relaxed font-normal">{selectedEnquiry.projectDescription}</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 text-slate-300">
-                    <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                      <span className="text-slate-500 block text-[10px]">Location</span>
-                      <span className="font-semibold">{selectedEnquiry.projectLocation}</span>
+                  <div className="grid grid-cols-2 gap-2 text-slate-700">
+                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                      <span className="text-slate-500 block text-[10px] font-bold">Location</span>
+                      <span className="font-bold text-slate-900">{selectedEnquiry.projectLocation}</span>
                     </div>
-                    <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                      <span className="text-slate-500 block text-[10px]">Budget</span>
-                      <span className="font-semibold">{selectedEnquiry.approximateBudget}</span>
+                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                      <span className="text-slate-500 block text-[10px] font-bold">Budget</span>
+                      <span className="font-bold text-slate-900">{selectedEnquiry.approximateBudget}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800 flex justify-between items-center">
+                <div className="pt-2 border-t border-slate-100 flex justify-between items-center">
                   <a
                     href={`https://wa.me/${selectedEnquiry.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(selectedEnquiry.name)},%20this%20is%20JP%20Constructions%20regarding%20your%20enquiry%20${selectedEnquiry.referenceNo}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm"
                   >
                     <span>Message on WhatsApp</span>
                   </a>
 
                   <button
                     onClick={() => setSelectedEnquiry(null)}
-                    className="px-4 py-2 rounded-lg bg-slate-800 text-xs font-semibold text-slate-300"
+                    className="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700"
                   >
                     Close
                   </button>
@@ -533,16 +503,16 @@ export const AdminDashboard: React.FC = () => {
       {/* TAB 2: PROJECTS MANAGER */}
       {activeTab === 'projects' && (
         <div className="space-y-6">
-          <div className="flex justify-between items-center bg-slate-900 p-4 rounded-2xl border border-slate-800">
-            <span className="text-xs font-semibold text-slate-300">
+          <div className="flex justify-between items-center bg-white p-4 rounded-3xl border border-slate-200 shadow-sm">
+            <span className="text-xs font-semibold text-slate-600">
               Manage live project portfolio and case study showcases.
             </span>
 
             <button
               onClick={() => {
-                alert('Project editing is fully connected to the persistent store. Add/Edit modals allow updating live records.');
+                alert('Project editing is fully connected to the persistent store.');
               }}
-              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
             >
               <Plus className="w-4 h-4" />
               <span>Add New Project</span>
@@ -553,34 +523,34 @@ export const AdminDashboard: React.FC = () => {
             {projects.map((p) => (
               <div 
                 key={p.id}
-                className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-3xl p-5 space-y-3 relative overflow-hidden shadow-xs"
               >
-                <div className="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 mb-2">
+                <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 mb-2">
                   <img src={p.heroImage} alt={p.title} className="w-full h-full object-cover" />
                 </div>
 
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-amber-400">
+                    <span className="text-[10px] uppercase font-bold text-amber-700">
                       {p.categoryLabel}
                     </span>
-                    <h4 className="font-display font-bold text-base text-white line-clamp-1">
+                    <h4 className="font-display font-bold text-base text-slate-900 line-clamp-1">
                       {p.title}
                     </h4>
-                    <span className="text-xs text-slate-400">{p.location}, {p.state}</span>
+                    <span className="text-xs text-slate-500 font-medium">{p.location}, {p.state}</span>
                   </div>
 
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${p.isVerified ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-400'}`}>
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${p.isVerified ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-slate-100 text-slate-600'}`}>
                     {p.isVerified ? 'Verified' : 'Demo'}
                   </span>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+                <div className="pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
                   <span className="text-slate-400 font-mono">REF: {p.slug.slice(0, 12)}</span>
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleDeleteProject(p.id)}
-                      className="p-1.5 rounded-lg bg-slate-950 text-red-400 hover:bg-red-950 transition-colors"
+                      className="p-1.5 rounded-lg bg-slate-50 text-red-600 hover:bg-red-100 transition-colors cursor-pointer"
                       title="Delete Project"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -595,47 +565,47 @@ export const AdminDashboard: React.FC = () => {
 
       {/* TAB 3: DATABASE & SUPABASE SETTINGS */}
       {activeTab === 'database' && (
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6">
-          <div className="border-b border-slate-800 pb-4">
-            <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">
+        <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-sm">
+          <div className="border-b border-slate-100 pb-4">
+            <span className="text-xs uppercase font-bold text-amber-700 tracking-wider">
               Backend Architecture
             </span>
-            <h3 className="font-display text-2xl font-bold text-white mt-1">
+            <h3 className="font-display text-2xl font-bold text-slate-900 mt-1">
               Database Configuration & PostgreSQL Schema
             </h3>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               The website features a hybrid backend: it operates with zero downtime via our high-speed persistent storage adapter, and connects directly to Supabase when environment keys are configured.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
-              <span className="text-xs font-bold uppercase text-white block">
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+              <span className="text-xs font-bold uppercase text-slate-900 block">
                 Live Supabase Connection Status
               </span>
               <div className="flex items-center gap-2">
-                <span className={`w-3 h-3 rounded-full ${isSupabaseConfigured ? 'bg-emerald-400' : 'bg-amber-400 animate-pulse'}`}></span>
-                <span className="text-sm font-semibold text-white">
+                <span className={`w-3 h-3 rounded-full ${isSupabaseConfigured ? 'bg-emerald-500' : 'bg-amber-500 animate-pulse'}`}></span>
+                <span className="text-sm font-bold text-slate-900">
                   {isSupabaseConfigured ? 'Connected to Remote Supabase' : 'Standby / Local Persistent Storage Engine'}
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                To link to your dedicated cloud Supabase instance, supply <code className="text-amber-400 font-mono">VITE_SUPABASE_URL</code> and <code className="text-amber-400 font-mono">VITE_SUPABASE_ANON_KEY</code> in <code className="text-white font-mono">.env</code>.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                To link to your dedicated cloud Supabase instance, supply <code className="text-amber-800 font-mono bg-amber-50 px-1 py-0.5 rounded border border-amber-200">VITE_SUPABASE_URL</code> and <code className="text-amber-800 font-mono bg-amber-50 px-1 py-0.5 rounded border border-amber-200">VITE_SUPABASE_ANON_KEY</code> in <code className="text-slate-900 font-mono">.env</code>.
               </p>
             </div>
 
-            <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
-              <span className="text-xs font-bold uppercase text-white block">
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+              <span className="text-xs font-bold uppercase text-slate-900 block">
                 Database Migration Script
               </span>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-600">
                 A production-ready schema migration script has been generated at:
               </p>
-              <div className="font-mono text-xs text-amber-400 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+              <div className="font-mono text-xs text-amber-900 bg-white p-2.5 rounded-xl border border-slate-200">
                 supabase/schema.sql
               </div>
               <p className="text-[11px] text-slate-500">
-                Includes tables: <code className="text-slate-300">profiles, services, projects, project_images, enquiries, team_members, testimonials</code> with Row Level Security (RLS) policies.
+                Includes tables: <code className="text-slate-700">profiles, services, projects, project_images, enquiries, team_members, testimonials</code> with Row Level Security (RLS) policies.
               </p>
             </div>
           </div>
