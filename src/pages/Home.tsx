@@ -26,6 +26,7 @@ import { ProcessTimeline } from '../components/ProcessTimeline';
 import { QuoteForm } from '../components/QuoteForm';
 import { CostEstimatorModal } from '../components/CostEstimatorModal';
 import { SafeImage } from '../components/SafeImage';
+import { HeroSlider } from '../components/HeroSlider';
 import { MachineryFleet } from '../components/MachineryFleet';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { companyProfile, verifiedStats, clientTestimonials } from '../data/companyData';
@@ -54,143 +55,9 @@ export const Home: React.FC = () => {
       />
 
       {/* =========================================================================
-          1. HERO SECTION - Crisp, Settled, Premium Light Aesthetic
+          1. HERO SLIDER SECTION (Inspired by jpconstructionspune.com discipline carousel & quick inquiry)
          ========================================================================= */}
-      <section className="relative min-h-[88vh] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-gradient-to-b from-slate-100/80 via-white to-slate-50 border-b border-slate-200/80">
-        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-          <SafeImage
-            src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=2000&q=85"
-            alt="JP Constructions Major River Bridge Engineering"
-            className="w-full h-full object-cover object-center filter grayscale contrast-125"
-          />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Column: Headlines & Action Triggers */}
-            <div className="lg:col-span-8 space-y-6">
-              
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 text-xs font-bold tracking-wider uppercase shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-                <span>Established 2001 • Over Two Decades of Civil Excellence</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="font-display text-4xl sm:text-6xl xl:text-7xl font-black text-slate-900 tracking-tight leading-[1.08]">
-                Building Strong Foundations. <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800">
-                  Creating Lasting Value.
-                </span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-3xl font-normal">
-                Main civil contractor for major river bridges, prestressed concrete box girders, railway corridors, heavy industrial workshops, and high-performance commercial structures across India.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Link
-                  to="/projects"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 group active:scale-95"
-                >
-                  <span>Explore Verified Projects</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <Link
-                  to="/quote"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-xs"
-                >
-                  <span>Request a Quotation</span>
-                </Link>
-
-                <button
-                  onClick={() => setEstimatorOpen(true)}
-                  className="w-full sm:w-auto px-5 py-4 rounded-xl bg-amber-50 hover:bg-amber-100/80 text-amber-900 border border-amber-300/80 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
-                >
-                  <Calculator className="w-4 h-4 text-amber-700" />
-                  <span>Cost Estimator</span>
-                </button>
-              </div>
-
-              {/* Verified Key Highlights Strip */}
-              <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200 text-left">
-                <div>
-                  <span className="font-display text-2xl sm:text-3xl font-black text-slate-900 block">
-                    23+
-                  </span>
-                  <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">Years Active</span>
-                </div>
-                <div>
-                  <span className="font-display text-2xl sm:text-3xl font-black text-amber-700 block">
-                    50+
-                  </span>
-                  <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">Major Bridge Spans</span>
-                </div>
-                <div>
-                  <span className="font-display text-2xl sm:text-3xl font-black text-slate-900 block">
-                    100%
-                  </span>
-                  <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">Safety Compliance</span>
-                </div>
-                <div>
-                  <span className="font-display text-2xl sm:text-3xl font-black text-amber-700 block">
-                    740m
-                  </span>
-                  <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">Single River Span</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Verified Project Highlight Card */}
-            <div className="lg:col-span-4 hidden lg:block">
-              <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xl text-left space-y-4 relative">
-                <div className="flex justify-between items-center">
-                  <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-slate-950 shadow-xs">
-                    Flagship Infrastructure
-                  </span>
-                  <span className="text-xs text-slate-500 font-semibold">Nellore, AP</span>
-                </div>
-
-                <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 shadow-sm">
-                  <SafeImage
-                    src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=800&q=80"
-                    alt="Penna River Bridge Nellore"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900">
-                    Penna River Bridge (Nellore)
-                  </h3>
-                  <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
-                    33 spans totaling 740.61 meters delivered in a record 18-month window across challenging riverbed strata.
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <div className="text-xs">
-                    <span className="text-slate-400 block text-[10px] uppercase font-bold">Client</span>
-                    <span className="font-bold text-slate-800">South Central Railway / RVNL</span>
-                  </div>
-                  <Link
-                    to="/projects/penna-river-bridge-nellore"
-                    className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
-                  >
-                    <span>View Case Study</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <HeroSlider onOpenEstimator={() => setEstimatorOpen(true)} />
 
       {/* =========================================================================
           2. VERIFIED CREDENTIALS & EPC PARTNERS BANNER
@@ -369,16 +236,33 @@ export const Home: React.FC = () => {
               className="bg-white border border-slate-200 rounded-3xl p-7 hover:border-amber-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between group shadow-sm"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
-                  {svc.category === 'infrastructure' && <HardHat className="w-6 h-6" />}
-                  {svc.category === 'roads' && <Truck className="w-6 h-6" />}
-                  {svc.category === 'pipelines' && <Droplets className="w-6 h-6" />}
-                  {svc.category === 'rcc-works' && <Layers className="w-6 h-6" />}
-                  {svc.category === 'railways' && <TrainTrack className="w-6 h-6" />}
-                  {svc.category === 'industrial' && <Factory className="w-6 h-6" />}
-                  {svc.category === 'commercial' && <Building2 className="w-6 h-6" />}
-                  {svc.category === 'residential' && <HomeIcon className="w-6 h-6" />}
-                  {svc.category === 'renovation' && <Wrench className="w-6 h-6" />}
+                {/* Visual Image Preview with Icon Badge */}
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 mb-5 relative group/img">
+                  <SafeImage
+                    src={svc.heroImage}
+                    alt={svc.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-amber-800 flex items-center justify-center shadow-sm">
+                    {svc.category === 'infrastructure' && <HardHat className="w-5 h-5" />}
+                    {svc.category === 'roads' && <Truck className="w-5 h-5" />}
+                    {svc.category === 'pipelines' && <Droplets className="w-5 h-5" />}
+                    {svc.category === 'rcc-works' && <Layers className="w-5 h-5" />}
+                    {svc.category === 'railways' && <TrainTrack className="w-5 h-5" />}
+                    {svc.category === 'industrial' && <Factory className="w-5 h-5" />}
+                    {svc.category === 'commercial' && <Building2 className="w-5 h-5" />}
+                    {svc.category === 'residential' && <HomeIcon className="w-5 h-5" />}
+                    {svc.category === 'renovation' && <Wrench className="w-5 h-5" />}
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center text-[10px] font-bold text-white uppercase tracking-wider">
+                    <span className="bg-amber-500 text-slate-950 px-2 py-0.5 rounded shadow-xs font-black">
+                      {svc.category.toUpperCase()}
+                    </span>
+                    <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded">
+                      Certified Scope
+                    </span>
+                  </div>
                 </div>
 
                 <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-amber-800 transition-colors mb-2">
