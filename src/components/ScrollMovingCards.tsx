@@ -1,14 +1,13 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { 
-  HardHat, 
   Truck, 
   Droplets, 
   Layers, 
   Building2, 
-  ArrowRight,
-  ShieldCheck,
-  Sparkles
+  ArrowRight, 
+  ShieldCheck, 
+  Sparkles 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SafeImage } from './SafeImage';
@@ -110,22 +109,13 @@ const row2Cards: CapabilityCard[] = [
   }
 ];
 
+// Replicated arrays for seamless continuous looping in opposite directions
+const continuousRow1 = [...row1Cards, ...row1Cards, ...row1Cards, ...row1Cards];
+const continuousRow2 = [...row2Cards, ...row2Cards, ...row2Cards, ...row2Cards];
+
 export const ScrollMovingCards: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Track scroll position of the section to move cards
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Row 1 shifts smoothly from left to right as you scroll down
-  const xRow1 = useTransform(scrollYProgress, [0, 1], ["5%", "-35%"]);
-  // Row 2 shifts smoothly in the opposite direction
-  const xRow2 = useTransform(scrollYProgress, [0, 1], ["-35%", "5%"]);
-
   return (
-    <div ref={containerRef} className="space-y-8 overflow-hidden py-10 relative">
+    <div className="space-y-8 overflow-hidden py-10 relative">
       {/* Background Watermark Pattern from Reference Website */}
       <div 
         className="absolute inset-0 opacity-20 pointer-events-none bg-repeat"
@@ -142,7 +132,7 @@ export const ScrollMovingCards: React.FC = () => {
             Real Infrastructure Works in Motion
           </h2>
           <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
-            As you scroll, inspect verified civil site executions spanning intake jackwells, industrial sheds, canal aqueducts, and highways.
+            Continuously gliding showcase of verified civil site executions across intake jackwells, industrial sheds, canal aqueducts, and arterial highways.
           </p>
         </div>
 
@@ -155,20 +145,15 @@ export const ScrollMovingCards: React.FC = () => {
         </Link>
       </div>
 
-      {/* Row 1: Real Photos (Glides Left on Scroll) */}
-      <div className="relative w-full overflow-hidden py-2 z-10">
-        <motion.div 
-          style={{ x: xRow1 }} 
-          className="flex gap-6 w-max cursor-grab active:cursor-grabbing pl-4 sm:pl-8"
-        >
-          {row1Cards.map((card) => {
+      {/* Row 1: Continuously Moving to the Left */}
+      <div className="relative w-full overflow-hidden py-2 z-10 group/row1">
+        <div className="animate-marquee-left flex gap-6 w-max cursor-pointer pl-4 sm:pl-8">
+          {continuousRow1.map((card, idx) => {
             const IconComp = card.icon;
             return (
-              <motion.div
-                key={card.id}
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.25 }}
-                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
+              <div
+                key={`${card.id}-r1-${idx}`}
+                className="w-[320px] sm:w-[380px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Real Photo */}
@@ -213,26 +198,21 @@ export const ScrollMovingCards: React.FC = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
-      {/* Row 2: Real Photos (Glides Right on Scroll) */}
-      <div className="relative w-full overflow-hidden py-2 z-10">
-        <motion.div 
-          style={{ x: xRow2 }} 
-          className="flex gap-6 w-max cursor-grab active:cursor-grabbing pl-4 sm:pl-8"
-        >
-          {row2Cards.map((card) => {
+      {/* Row 2: Continuously Moving in the OPPOSITE Direction (Rightwards) */}
+      <div className="relative w-full overflow-hidden py-2 z-10 group/row2">
+        <div className="animate-marquee-right flex gap-6 w-max cursor-pointer pl-4 sm:pl-8">
+          {continuousRow2.map((card, idx) => {
             const IconComp = card.icon;
             return (
-              <motion.div
-                key={card.id}
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.25 }}
-                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
+              <div
+                key={`${card.id}-r2-${idx}`}
+                className="w-[320px] sm:w-[380px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Real Photo */}
@@ -277,10 +257,10 @@ export const ScrollMovingCards: React.FC = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

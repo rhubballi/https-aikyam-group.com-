@@ -19,13 +19,11 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { ProcessTimeline } from '../components/ProcessTimeline';
 import { motion } from 'framer-motion';
-import { QuoteForm } from '../components/QuoteForm';
 import { CostEstimatorModal } from '../components/CostEstimatorModal';
 import { SafeImage } from '../components/SafeImage';
 import { HeroSlider } from '../components/HeroSlider';
 import { ClientMarquee } from '../components/ClientMarquee';
 import { AnimatedCounter } from '../components/AnimatedCounter';
-import { MachineryFleet } from '../components/MachineryFleet';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { ScrollMovingCards } from '../components/ScrollMovingCards';
 import { companyProfile, clientTestimonials } from '../data/companyData';
@@ -326,14 +324,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          7. HEAVY PLANT & MACHINERY FLEET
-         ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MachineryFleet />
-      </section>
-
-      {/* =========================================================================
-          8. SEVEN-STAGE PROVEN ENGINEERING PROCESS
+          7. SEVEN-STAGE PROVEN ENGINEERING PROCESS
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -347,7 +338,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          9. VERIFIED CLIENT ENDORSEMENTS
+          8. VERIFIED CLIENT ENDORSEMENTS
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -388,13 +379,6 @@ export const Home: React.FC = () => {
             </motion.div>
           ))}
         </div>
-      </section>
-
-      {/* =========================================================================
-          10. REQUEST A QUOTE BANNER & FORM
-         ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <QuoteForm />
       </section>
 
     </div>

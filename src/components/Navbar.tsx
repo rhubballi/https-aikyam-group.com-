@@ -50,7 +50,6 @@ export const Navbar: React.FC = () => {
         { name: 'Building Construction', path: '/services/building-construction', icon: Building2 },
       ]
     },
-    { name: 'Machinery Fleet', path: '/machinery' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -191,26 +190,19 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTAs */}
+          {/* Direct Phone / Contact Action */}
           <div className="hidden sm:flex items-center gap-3">
-            <Link
-              to="/quote"
-              className="relative group overflow-hidden px-5 py-2.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-blue-900/20 hover:shadow-lg flex items-center gap-2 active:scale-95"
+            <a
+              href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
+              className="px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100/80 text-[#1d4ca2] font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-blue-200 flex items-center gap-2 shadow-xs"
             >
-              <FileText className="w-4 h-4" />
-              <span>Get a Quote</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
+              <Phone className="w-3.5 h-3.5 text-[#1d4ca2]" />
+              <span>{companyProfile.contact.displayPhone}</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Link
-              to="/quote"
-              className="px-3 py-1.5 rounded-lg bg-[#1d4ca2] text-white font-bold text-xs shadow-xs"
-            >
-              Quote
-            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"

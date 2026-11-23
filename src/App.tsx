@@ -7,7 +7,6 @@ import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
 import { ServicesOverview } from './pages/ServicesOverview';
 import { ServiceDetail } from './pages/ServiceDetail';
-import { MachineryPage } from './pages/MachineryPage';
 import { ContactUs } from './pages/ContactUs';
 import { RequestQuotePage } from './pages/RequestQuotePage';
 import { AdminDashboard } from './pages/AdminDashboard';
@@ -51,8 +50,8 @@ export const App: React.FC = () => {
           <Route path="/services/building" element={<Navigate to="/services/building-construction" replace />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
 
-          {/* Plant & Machinery Fleet */}
-          <Route path="/machinery" element={<MachineryPage />} />
+          {/* Plant & Machinery redirect */}
+          <Route path="/machinery" element={<Navigate to="/services" replace />} />
 
           {/* Contact Us */}
           <Route path="/contact" element={<ContactUs />} />

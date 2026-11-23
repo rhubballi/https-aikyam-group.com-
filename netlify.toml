@@ -1,0 +1,18 @@
+[build]
+  publish = "dist"
+  command = "pnpm build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Disable Netlify Collaborative Deploy Preview Drawer and badges
+[context.deploy-preview.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.branch-deploy.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.production.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
