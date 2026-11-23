@@ -96,21 +96,23 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Construction Video - Clean, Clear, Zero Blue Tint */}
+      {/* Background Construction Video - Genuine Civil Site & Cranes Timelapse */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
+          key="civil-construction-video"
           autoPlay
           loop
           muted
           playsInline
+          poster="/images/services/1.jpg"
           className="w-full h-full object-cover scale-100"
         >
-          <source src="/videos/construction-hero.mp4" type="video/mp4" />
+          <source src="/videos/civil-construction-site.mp4" type="video/mp4" />
         </video>
 
         {/* Transparent neutral gradient strictly for text legibility without obscuring the video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
       </div>
 
       {/* Main Slide Content Over Transparent Video */}

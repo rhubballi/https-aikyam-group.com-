@@ -190,17 +190,6 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Direct Phone / Contact Action */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
-              className="px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100/80 text-[#1d4ca2] font-bold text-xs uppercase tracking-wider transition-all duration-200 border border-blue-200 flex items-center gap-2 shadow-xs"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#1d4ca2]" />
-              <span>{companyProfile.contact.displayPhone}</span>
-            </a>
-          </div>
-
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
