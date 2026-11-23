@@ -76,8 +76,8 @@ export const ContactUs: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-teal-50 text-teal-900 border border-teal-200">
-              <Building className="w-4 h-4 text-teal-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-50 text-[#1d4ca2] border border-blue-200">
+              <Building className="w-4 h-4 text-[#1d4ca2]" />
               <span>Direct Communication</span>
             </div>
 
@@ -102,8 +102,8 @@ export const ContactUs: React.FC = () => {
             {/* Headquarters Card */}
             <div className="bg-white border border-slate-200/90 rounded-3xl p-8 space-y-6 shadow-sm">
               <div className="border-b border-slate-100 pb-4">
-                <span className="text-[11px] uppercase font-bold text-teal-700 tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+                <span className="text-[11px] uppercase font-bold text-[#1d4ca2] tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#1d4ca2]" />
                   <span>Registered Corporate Headquarters</span>
                 </span>
                 <h3 className="font-display text-xl font-bold text-slate-900 mt-1">
@@ -113,7 +113,7 @@ export const ContactUs: React.FC = () => {
 
               <div className="space-y-4 text-sm text-slate-600">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Office Address:</span>
                     <span className="leading-relaxed">
@@ -125,12 +125,12 @@ export const ContactUs: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
-                  <Phone className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Telephone & WhatsApp:</span>
                     <a 
                       href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
-                      className="text-teal-800 hover:text-cyan-800 font-bold block mt-0.5"
+                      className="text-[#1d4ca2] hover:text-[#153a7e] font-bold block mt-0.5"
                     >
                       {companyProfile.contact.phone}
                     </a>
@@ -138,12 +138,12 @@ export const ContactUs: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
-                  <Mail className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Official Email:</span>
                     <a 
                       href={`mailto:${companyProfile.contact.email}`}
-                      className="text-teal-800 hover:text-cyan-800 font-semibold"
+                      className="text-[#1d4ca2] hover:text-[#153a7e] font-semibold"
                     >
                       {companyProfile.contact.email}
                     </a>
@@ -151,7 +151,7 @@ export const ContactUs: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
-                  <Clock className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Working Hours:</span>
                     <span className="text-slate-600">{companyProfile.contact.workingHours}</span>
@@ -179,19 +179,19 @@ export const ContactUs: React.FC = () => {
               </span>
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                  <span className="text-teal-800 font-bold block">Nellore Hub</span>
+                  <span className="text-[#1d4ca2] font-bold block">Nellore Hub</span>
                   <span className="text-slate-500 text-[11px]">AP Coastal Works</span>
                 </div>
                 <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                  <span className="text-teal-800 font-bold block">Gudur Base</span>
+                  <span className="text-[#1d4ca2] font-bold block">Gudur Base</span>
                   <span className="text-slate-500 text-[11px]">SCR Rail Corridor</span>
                 </div>
                 <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                  <span className="text-teal-800 font-bold block">Podanur Site</span>
+                  <span className="text-[#1d4ca2] font-bold block">Podanur Site</span>
                   <span className="text-slate-500 text-[11px]">Southern Railway</span>
                 </div>
                 <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                  <span className="text-teal-800 font-bold block">Bangalore Base</span>
+                  <span className="text-[#1d4ca2] font-bold block">Bangalore Base</span>
                   <span className="text-slate-500 text-[11px]">NH-7 Highway Works</span>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export const ContactUs: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-sm relative">
               <div className="border-b border-slate-100 pb-4 mb-6">
-                <span className="text-xs uppercase font-bold text-teal-700 tracking-wider">
+                <span className="text-xs uppercase font-bold text-[#1d4ca2] tracking-wider">
                   Enquiry Transmission
                 </span>
                 <h3 className="font-display text-2xl font-bold text-slate-900 mt-1">
@@ -216,7 +216,7 @@ export const ContactUs: React.FC = () => {
 
               {success ? (
                 <div className="py-12 text-center space-y-4 animate-in zoom-in-95 duration-200">
-                  <div className="w-14 h-14 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto border border-teal-200">
+                  <div className="w-14 h-14 bg-blue-50 text-[#1d4ca2] rounded-full flex items-center justify-center mx-auto border border-blue-200">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="font-display text-2xl font-bold text-slate-900">
@@ -252,7 +252,7 @@ export const ContactUs: React.FC = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                         placeholder="Er. Suresh Varma"
                         required
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] transition-colors"
                       />
                     </div>
 
@@ -266,7 +266,7 @@ export const ContactUs: React.FC = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                         placeholder="suresh@domain.com"
                         required
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] transition-colors"
                       />
                     </div>
                   </div>
@@ -281,7 +281,7 @@ export const ContactUs: React.FC = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                         placeholder="+91 90030 38833"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] transition-colors"
                       />
                     </div>
 
@@ -293,7 +293,7 @@ export const ContactUs: React.FC = () => {
                         type="text"
                         value={formData.subject}
                         onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] transition-colors"
                       />
                     </div>
                   </div>
@@ -306,9 +306,9 @@ export const ContactUs: React.FC = () => {
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                      placeholder="Please share details about your inquiry, bridge project, tender submission, or partnership interest..."
+                      placeholder="Please share details about your inquiry, project scope, tender submission, or partnership interest..."
                       required
-                      className="w-full bg-slate-50 border border-slate-300 rounded-xl p-4 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl p-4 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] transition-colors"
                     />
                   </div>
 
@@ -320,7 +320,7 @@ export const ContactUs: React.FC = () => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-md shadow-cyan-600/20 disabled:opacity-50"
+                      className="px-8 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-md shadow-blue-900/20 disabled:opacity-50"
                     >
                       {loading ? (
                         <span>Transmitting...</span>
@@ -356,7 +356,7 @@ export const ContactUs: React.FC = () => {
               href="https://maps.google.com/?q=Santhi+Nagar+Kakinada+Andhra+Pradesh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-teal-700 hover:text-cyan-800 flex items-center gap-1"
+              className="text-xs font-bold text-[#1d4ca2] hover:text-[#153a7e] flex items-center gap-1"
             >
               <span>Open in Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />

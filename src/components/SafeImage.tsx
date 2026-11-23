@@ -55,31 +55,31 @@ export const SafeImage: React.FC<SafeImageProps> = ({
 
     return (
       <div 
-        className={`relative overflow-hidden bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 flex flex-col items-center justify-center p-6 text-center select-none ${className}`}
+        className={`relative overflow-hidden bg-gradient-to-br from-[#072151] via-slate-900 to-[#1d4ca2] flex flex-col items-center justify-center p-6 text-center select-none ${className}`}
         style={{ minHeight: '180px' }}
       >
         {/* Engineering Blueprint Grid Background */}
         <div 
           className="absolute inset-0 opacity-15 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(45, 212, 191, 0.4) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(29, 76, 162, 0.4) 1px, transparent 0)`,
             backgroundSize: '20px 20px'
           }}
         />
 
         {/* Diagonal architectural structural guide lines */}
         <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-teal-400" />
-          <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-cyan-400" />
+          <line x1="0" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-blue-400" />
+          <line x1="100%" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-blue-300" />
         </svg>
 
         {/* Center Technical Emblem */}
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-14 h-14 rounded-2xl bg-teal-500/15 border border-teal-400/30 text-teal-300 flex items-center justify-center shadow-lg shadow-teal-950/50 mb-3 backdrop-blur-xs">
+          <div className="w-14 h-14 rounded-2xl bg-blue-500/15 border border-blue-400/30 text-blue-300 flex items-center justify-center shadow-lg shadow-blue-950/50 mb-3 backdrop-blur-xs">
             <IconComponent className="w-7 h-7" />
           </div>
 
-          <span className="text-[10px] uppercase font-bold tracking-widest text-teal-400 px-2.5 py-0.5 rounded-full bg-teal-950/80 border border-teal-500/30 mb-1.5 flex items-center gap-1">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-blue-300 px-2.5 py-0.5 rounded-full bg-blue-950/80 border border-blue-500/30 mb-1.5 flex items-center gap-1">
             <ShieldCheck className="w-3 h-3" />
             JP CONSTRUCTIONS
           </span>
@@ -88,14 +88,14 @@ export const SafeImage: React.FC<SafeImageProps> = ({
             {alt || discipline}
           </span>
 
-          <span className="text-[11px] text-slate-400 mt-1 font-medium">
+          <span className="text-[11px] text-slate-300 mt-1 font-medium">
             Verified On-Site Execution
           </span>
         </div>
 
         {/* Tech Corner Markers */}
-        <div className="absolute top-2 left-2 text-[9px] font-mono text-teal-500/40">JP-CIVIL-01</div>
-        <div className="absolute bottom-2 right-2 text-[9px] font-mono text-teal-500/40">IS/IRC-SPEC</div>
+        <div className="absolute top-2 left-2 text-[9px] font-mono text-blue-400/40">JP-CIVIL-01</div>
+        <div className="absolute bottom-2 right-2 text-[9px] font-mono text-blue-400/40">IS/IRC-SPEC</div>
       </div>
     );
   }

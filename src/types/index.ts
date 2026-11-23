@@ -7,7 +7,8 @@ export type ProjectCategory =
   | 'renovation'
   | 'roads'
   | 'pipelines'
-  | 'rcc-works';
+  | 'rcc-works'
+  | 'building';
 
 export type ProjectStatus = 'completed' | 'ongoing' | 'tender';
 

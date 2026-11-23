@@ -6,9 +6,7 @@ import {
   ShieldCheck, 
   Truck, 
   ChevronRight,
-  Sparkles,
-  Layers,
-  FileCheck
+  Sparkles
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
@@ -33,7 +31,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
   return (
     <div className="space-y-20 pb-16 pt-6 bg-slate-50">
       <SEO 
-        title={`${service.title} — Construction Services`}
+        title={`${service.title} — JP Constructions`}
         description={service.shortDescription}
         canonicalPath={`/services/${service.slug}`}
         image={service.heroImage}
@@ -46,7 +44,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
           <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
           <Link to="/services" className="hover:text-slate-900 transition-colors">Services</Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-          <span className="text-teal-900 font-bold">{service.title}</span>
+          <span className="text-[#1d4ca2] font-bold">{service.title}</span>
         </nav>
       </div>
 
@@ -58,14 +56,14 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
               src={service.heroImage}
               alt={service.title}
               category={service.category}
-              className="w-full h-full object-cover brightness-[0.9] contrast-105 opacity-15"
+              className="w-full h-full object-cover brightness-[0.8] contrast-105 opacity-20"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70"></div>
           </div>
 
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-50 text-teal-900 border border-teal-200">
-              <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-[#1d4ca2] border border-blue-200">
+              <ShieldCheck className="w-4 h-4 text-[#1d4ca2]" />
               <span>Verified Engineering Discipline</span>
             </div>
 
@@ -80,7 +78,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
             <div className="pt-2 flex flex-wrap gap-4">
               <a
                 href="#enquiry-section"
-                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shadow-cyan-600/20"
+                className="px-6 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shadow-blue-900/20"
               >
                 <span>Request Quotation For This Service</span>
                 <ArrowRight className="w-4 h-4" />
@@ -97,8 +95,8 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
           {/* Scope of Work */}
           <div className="lg:col-span-7 bg-white border border-slate-200/90 rounded-3xl p-8 space-y-6 shadow-sm">
             <div className="border-b border-slate-100 pb-4">
-              <span className="text-xs uppercase font-bold text-teal-700 tracking-wider flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+              <span className="text-xs uppercase font-bold text-[#1d4ca2] tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#1d4ca2]" />
                 <span>Detailed Scope</span>
               </span>
               <h2 className="font-display text-2xl font-bold text-slate-900 mt-1">
@@ -109,7 +107,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
             <div className="space-y-3">
               {service.scopeOfWork.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
-                  <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-teal-200">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 text-[#1d4ca2] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-blue-200">
                     {idx + 1}
                   </div>
                   <span className="text-sm text-slate-800 leading-relaxed font-medium">
@@ -124,7 +122,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white border border-slate-200/90 rounded-3xl p-8 space-y-5 shadow-sm">
               <div className="border-b border-slate-100 pb-4">
-                <span className="text-xs uppercase font-bold text-teal-700 tracking-wider">
+                <span className="text-xs uppercase font-bold text-[#1d4ca2] tracking-wider">
                   Why Choose JP Constructions
                 </span>
                 <h3 className="font-display text-xl font-bold text-slate-900 mt-1">
@@ -135,7 +133,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
               <ul className="space-y-4">
                 {service.benefits.map((b, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
-                    <CheckCircle2 className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="font-medium">{b}</span>
                   </li>
                 ))}
@@ -145,13 +143,13 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
             {/* Specialized Equipment */}
             <div className="bg-white border border-slate-200/90 rounded-3xl p-8 space-y-4 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold uppercase text-slate-600">
-                <Truck className="w-4 h-4 text-teal-600" />
+                <Truck className="w-4 h-4 text-[#1d4ca2]" />
                 <span>Specialized Plant & Machinery</span>
               </div>
               <ul className="space-y-2 text-xs text-slate-700 font-medium">
                 {service.equipmentUsed.map((eq, idx) => (
                   <li key={idx} className="flex items-center gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1d4ca2]"></span>
                     <span>{eq}</span>
                   </li>
                 ))}
@@ -177,7 +175,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
               className="bg-white border border-slate-200/90 rounded-2xl p-6 relative flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow"
             >
               <div>
-                <span className="font-mono text-2xl font-black text-teal-600/40 block mb-2">
+                <span className="font-mono text-2xl font-black text-[#1d4ca2]/30 block mb-2">
                   0{step.step}
                 </span>
                 <h4 className="font-display font-bold text-base text-slate-900 mb-2">
@@ -200,10 +198,3 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ forcedSlug }) => {
     </div>
   );
 };
-
-export const ResidentialConstructionPage: React.FC = () => <ServiceDetail forcedSlug="residential" />;
-export const CommercialConstructionPage: React.FC = () => <ServiceDetail forcedSlug="commercial" />;
-export const IndustrialConstructionPage: React.FC = () => <ServiceDetail forcedSlug="industrial" />;
-export const InfrastructureProjectsPage: React.FC = () => <ServiceDetail forcedSlug="infrastructure" />;
-export const RenovationServicePage: React.FC = () => <ServiceDetail forcedSlug="renovation" />;
-export const RailwayServicePage: React.FC = () => <ServiceDetail forcedSlug="railways" />;

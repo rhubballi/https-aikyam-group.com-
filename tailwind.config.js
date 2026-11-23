@@ -8,23 +8,26 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: '#0891b2',      // Fresh Cyan 600
-          primaryDark: '#0e7490',  // Cyan 700
-          teal: '#0d9488',         // Fresh Teal 600
-          tealDark: '#115e59',     // Teal 800
-          sky: '#0284c7',          // Sky 600
-          emerald: '#059669',      // Emerald 600
-          navy: '#0f172a',         // Slate 900
-          dark: '#020617',         // Slate 950
-          ice: '#f0f9ff',          // Fresh Sky Ice
-          mint: '#f0fdf4',         // Fresh Mint Ice
-          surface: '#f8fafc',      // Clean Slate 50
+          primary: '#1d4ca2',      // Official Reference Royal Blue
+          primaryDark: '#153a7e',  // Deep Royal Blue
+          navy: '#072151',         // Official Reference Deep Navy
+          accent: '#2563eb',       // Bright Corporate Blue
+          sky: '#0284c7',          // Sky Blue
+          steel: '#334155',        // Slate
+          surface: '#f8fafc',      // Clean off-white
+          lightBlue: '#eef2ff',    // Soft ice-blue tint
+          dark: '#0f172a',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Outfit', 'Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'pattern-map': "url('/images/background/bg-map.png')",
+        'pattern-bg5': "url('/images/background/bg5.jpg')",
+        'pattern-bg6': "url('/images/background/bg6.jpg')",
+      }
     },
   },
   plugins: [],

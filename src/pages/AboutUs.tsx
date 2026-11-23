@@ -31,8 +31,8 @@ export const AboutUs: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-teal-50 text-teal-900 border border-teal-200">
-              <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-50 text-[#1d4ca2] border border-blue-200">
+              <ShieldCheck className="w-4 h-4 text-[#1d4ca2]" />
               <span>Corporate Profile & History</span>
             </div>
 
@@ -76,7 +76,7 @@ export const AboutUs: React.FC = () => {
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
                 <span className="text-slate-500 block uppercase font-bold text-[10px]">Establishment Year</span>
-                <span className="text-teal-900 font-bold text-sm">2001 (23+ Years)</span>
+                <span className="text-[#1d4ca2] font-bold text-sm">2001 (23+ Years)</span>
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
                 <span className="text-slate-500 block uppercase font-bold text-[10px]">Operating Headquarters</span>
@@ -84,7 +84,7 @@ export const AboutUs: React.FC = () => {
               </div>
               <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
                 <span className="text-slate-500 block uppercase font-bold text-[10px]">Primary Focus</span>
-                <span className="text-teal-900 font-bold text-sm">Bridges, Railways & Civil EPC</span>
+                <span className="text-[#1d4ca2] font-bold text-sm">Roads, Pipelines, RCC & Buildings</span>
               </div>
             </div>
           </div>
@@ -92,13 +92,13 @@ export const AboutUs: React.FC = () => {
           <div className="lg:col-span-6 space-y-4">
             <div className="relative rounded-3xl overflow-hidden bg-slate-900 aspect-[16/10] shadow-md border border-slate-200">
               <SafeImage
-                src="/images/civil-execution.svg"
+                src="/images/gallery/pic1.jpg"
                 alt="JP Constructions site engineers inspecting reinforcement"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200 text-xs shadow-lg">
-                <span className="text-teal-800 font-bold block">Engineering Philosophy:</span>
+                <span className="text-[#1d4ca2] font-bold block">Engineering Philosophy:</span>
                 <span className="text-slate-700 font-medium">
                   "Detailed resource planning, rigorous scheduling, and strict adherence to client objectives ensure a dependable execution experience."
                 </span>
@@ -111,8 +111,8 @@ export const AboutUs: React.FC = () => {
       {/* Mission, Vision & Core Values */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-cyan-400 transition-all shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5 border border-teal-200">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-blue-400 transition-all shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-5 border border-blue-200">
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
@@ -121,8 +121,8 @@ export const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-cyan-400 transition-all shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5 border border-teal-200">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-blue-400 transition-all shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-5 border border-blue-200">
               <Target className="w-6 h-6" />
             </div>
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
@@ -131,8 +131,8 @@ export const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-cyan-400 transition-all shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mb-5 border border-teal-200">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 hover:border-blue-400 transition-all shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-5 border border-blue-200">
               <FileCheck className="w-6 h-6" />
             </div>
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">Quality Policy</h3>
@@ -153,11 +153,11 @@ export const AboutUs: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-cyan-400 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-blue-400 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-4">
               <Award className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#1d4ca2] block mb-1">
               South Western Railway
             </span>
             <h4 className="font-display font-bold text-lg text-slate-900 mb-2">
@@ -168,11 +168,11 @@ export const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-cyan-400 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-blue-400 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-4">
               <Layers className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#1d4ca2] block mb-1">
               Southern Railway / RVNL
             </span>
             <h4 className="font-display font-bold text-lg text-slate-900 mb-2">
@@ -183,11 +183,11 @@ export const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-cyan-400 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-sm hover:border-blue-400 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1d4ca2] flex items-center justify-center mb-4">
               <Cpu className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#1d4ca2] block mb-1">
               Industrial Plants & Foundations
             </span>
             <h4 className="font-display font-bold text-lg text-slate-900 mb-2">
@@ -205,8 +205,8 @@ export const AboutUs: React.FC = () => {
         <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-12 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-teal-50 text-teal-900 border border-teal-300">
-                <Truck className="w-4 h-4 text-teal-700" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-[#1d4ca2] border border-blue-200">
+                <Truck className="w-4 h-4 text-[#1d4ca2]" />
                 <span>Heavy Equipment Fleet</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
@@ -248,14 +248,14 @@ export const AboutUs: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {companyProfile.operatingLocations.map((loc, idx) => (
             <div key={idx} className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm">
-              <div className="flex items-center gap-2 text-teal-800 font-display font-bold text-lg mb-3">
-                <MapPin className="w-5 h-5 text-teal-600" />
+              <div className="flex items-center gap-2 text-[#1d4ca2] font-display font-bold text-lg mb-3">
+                <MapPin className="w-5 h-5 text-[#1d4ca2]" />
                 <span>{loc.state}</span>
               </div>
               <ul className="space-y-1.5 text-xs text-slate-600 font-medium">
                 {loc.hubs.map((hub, hIdx) => (
                   <li key={hIdx} className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1d4ca2]"></span>
                     <span>{hub}</span>
                   </li>
                 ))}
@@ -269,7 +269,7 @@ export const AboutUs: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="bg-white border border-slate-200/90 rounded-3xl p-10 sm:p-14 space-y-6 shadow-md">
           <h3 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900">
-            Have a Complex Civil or Bridge Tender?
+            Have a Complex Civil or Infrastructure Project?
           </h3>
           <p className="text-slate-600 text-sm max-w-xl mx-auto leading-relaxed">
             Discuss technical schedules, joint venture capabilities, or sub-contracting packages directly with our senior management.
@@ -277,7 +277,7 @@ export const AboutUs: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
             <Link
               to="/quote"
-              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-cyan-600/20"
+              className="px-8 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-blue-900/20"
             >
               Request Project Quotation
             </Link>
@@ -285,7 +285,7 @@ export const AboutUs: React.FC = () => {
               to="/contact"
               className="px-8 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider"
             >
-              Contact Kakinada Office
+              Contact Office
             </Link>
           </div>
         </div>

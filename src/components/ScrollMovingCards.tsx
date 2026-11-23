@@ -5,22 +5,19 @@ import {
   Truck, 
   Droplets, 
   Layers, 
-  Factory, 
-  TrainTrack, 
+  Building2, 
   ArrowRight,
   ShieldCheck,
   Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SafeImage } from './SafeImage';
-import { SectionHeader } from './SectionHeader';
 
 interface CapabilityCard {
   id: string;
   title: string;
   discipline: string;
-  metric: string;
-  metricLabel: string;
+  location: string;
   spec: string;
   image: string;
   icon: React.ElementType;
@@ -30,94 +27,86 @@ interface CapabilityCard {
 const row1Cards: CapabilityCard[] = [
   {
     id: "cap-1",
-    title: "Major River PSC Box Girder Bridge",
-    discipline: "Bridge Infrastructure",
-    metric: "96m",
-    metricLabel: "Continuous Longest Span",
-    spec: "IRS Bridge Code • Deep Well Caissons",
-    image: "/images/bridge-hero.svg",
-    icon: HardHat,
-    link: "/services/infrastructure"
+    title: "Jackwell - JSPM College",
+    discipline: "Pipelines & Jackwell",
+    location: "Wagholi, Pune",
+    spec: "Deep riverbed monolithic intake jackwell & pumphouse",
+    image: "/images/projects/jackwell-jspm-college-wagholi.jpg",
+    icon: Droplets,
+    link: "/services/pipelines-construction"
   },
   {
     id: "cap-2",
-    title: "4-Lane High Velocity Expressways",
-    discipline: "Road & Pavements",
-    metric: "150 kN",
-    metricLabel: "Axle Load Rating",
-    spec: "Sensor-Paver Leveled PQC Pavement",
-    image: "/images/road-construction.svg",
-    icon: Truck,
-    link: "/services/roads"
+    title: "Industrial Shed - Om Sai Engg.",
+    discipline: "Building Construction",
+    location: "Khopoli, Maharashtra",
+    spec: "Turnkey PEB structural shed with heavy EOT crane bays",
+    image: "/images/projects/industrial-shed-om-sai-khopoli.jpg",
+    icon: Building2,
+    link: "/services/building-construction"
   },
   {
     id: "cap-3",
-    title: "Deep Riverbed Intake Jackwells",
-    discipline: "Water & Pipelines",
-    metric: "12m Dia",
-    metricLabel: "Monolithic Sinking",
-    spec: "Pneumatic Sinking • Class K9 DI Pipes",
-    image: "/images/pipeline-construction.svg",
-    icon: Droplets,
-    link: "/services/pipelines"
+    title: "Banda Canal Through Aqueduct",
+    discipline: "RCC Works",
+    location: "Tillari Irrigation Project",
+    spec: "Reinforced concrete elevated canal aqueduct & siphon conduits",
+    image: "/images/projects/banda-canal-through-aqueduct-tillari.jpg",
+    icon: Layers,
+    link: "/services/rcc-works"
   },
   {
     id: "cap-4",
-    title: "Rail-Over-Rail (ROR) Flyover Viaducts",
-    discipline: "Railway Corridors",
-    metric: "160 MT",
-    metricLabel: "Truss Launching Capacity",
-    spec: "Live Track Safety Blocks • Zero LTI",
-    image: "/images/civil-execution.svg",
-    icon: TrainTrack,
-    link: "/services/railways"
+    title: "Expressway & Highway PQC Pavement",
+    discipline: "Road Construction",
+    location: "Industrial Corridor",
+    spec: "High-grade PQC concrete and sensor-paved bituminous highway",
+    image: "/images/services/1.jpg",
+    icon: Truck,
+    link: "/services/road-construction"
   }
 ];
 
 const row2Cards: CapabilityCard[] = [
   {
     id: "cap-5",
-    title: "Heavy RCC Machine Rafts & Slabs",
-    discipline: "Structural Concrete",
-    metric: "M60",
-    metricLabel: "High-Strength Mix Design",
-    spec: "Continuous 36-hr Monolithic Pours",
-    image: "/images/rcc-construction.svg",
+    title: "DI Pipeline - JSPM College",
+    discipline: "Pipelines Construction",
+    location: "Wagholi, Pune",
+    spec: "Bulk Ductile Iron (DI) transmission main & thrust blocks",
+    image: "/images/projects/di-pipeline-jspm-college-wagholi.jpg",
+    icon: Droplets,
+    link: "/services/pipelines-construction"
+  },
+  {
+    id: "cap-6",
+    title: "RCC Industrial Shed Execution",
+    discipline: "RCC & Industrial Works",
+    location: "Khopoli, Maharashtra",
+    spec: "Heavy machine raft foundations and monolithic framing",
+    image: "/images/projects/rcc-industrial-shed-om-sai-khopoli.jpg",
     icon: Layers,
     link: "/services/rcc-works"
   },
   {
-    id: "cap-6",
-    title: "Turnkey Pre-Engineered Workshops",
-    discipline: "Industrial Facilities",
-    metric: "10T/m²",
-    metricLabel: "Heavy Floor Load Rating",
-    spec: "Overhead EOT Crane Bays • FM2 Flatness",
-    image: "/images/industrial-building.svg",
-    icon: Factory,
-    link: "/services/industrial"
-  },
-  {
     id: "cap-7",
-    title: "Precast Girder Yard & Launching",
-    discipline: "Infrastructure Engineering",
-    metric: "10 Bridges",
-    metricLabel: "Delivered in 18 Months",
-    spec: "Villupuram–Mayiladuthurai Corridor",
-    image: "/images/bridge-hero.svg",
-    icon: HardHat,
-    link: "/services/infrastructure"
+    title: "Aqueduct Structural Framework",
+    discipline: "RCC Works",
+    location: "Phaltan, Maharashtra",
+    spec: "Heavy-duty hydraulic water-carrying bridge structure",
+    image: "/images/projects/aqueduct-phaltan.jpg",
+    icon: Layers,
+    link: "/services/rcc-works"
   },
   {
     id: "cap-8",
-    title: "Bulk DI Water Transmission Grids",
-    discipline: "Hydraulic Utilities",
-    metric: "16 kg/cm²",
-    metricLabel: "Hydrostatic Test Pressure",
-    spec: "Thrust Blocks & Surge Pumping Bays",
-    image: "/images/pipeline-construction.svg",
-    icon: Droplets,
-    link: "/services/pipelines"
+    title: "Modern Commercial Complex",
+    discipline: "Building Construction",
+    location: "Corporate Hub",
+    spec: "Turnkey commercial civil framework with modern façade",
+    image: "/images/gallery/pic1.jpg",
+    icon: Building2,
+    link: "/services/building-construction"
   }
 ];
 
@@ -130,38 +119,44 @@ export const ScrollMovingCards: React.FC = () => {
     offset: ["start end", "end start"]
   });
 
-  // Row 1 shifts smoothly from left (positive X) to right (negative X) as you scroll down
+  // Row 1 shifts smoothly from left to right as you scroll down
   const xRow1 = useTransform(scrollYProgress, [0, 1], ["5%", "-35%"]);
   // Row 2 shifts smoothly in the opposite direction
   const xRow2 = useTransform(scrollYProgress, [0, 1], ["-35%", "5%"]);
 
   return (
-    <div ref={containerRef} className="space-y-10 overflow-hidden py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div ref={containerRef} className="space-y-8 overflow-hidden py-10 relative">
+      {/* Background Watermark Pattern from Reference Website */}
+      <div 
+        className="absolute inset-0 opacity-20 pointer-events-none bg-repeat"
+        style={{ backgroundImage: "url('/images/background/bg-map.png')" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4 relative z-10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3 bg-teal-50 text-teal-900 border border-teal-200/80 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600 animate-spin" style={{ animationDuration: '6s' }} />
-            <span>Interactive Operational Showcase</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3 bg-blue-50 text-[#1d4ca2] border border-blue-200/80 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#1d4ca2]" />
+            <span>Demonstrated Engineering Track Record</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-            Core Civil Capabilities in Motion
+            Real Infrastructure Works in Motion
           </h2>
           <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
-            As you scroll, inspect our specialized civil execution disciplines spanning heavy bridges, sensor-paved highways, and high-pressure transmission networks.
+            As you scroll, inspect verified civil site executions spanning intake jackwells, industrial sheds, canal aqueducts, and highways.
           </p>
         </div>
 
         <Link
           to="/services"
-          className="inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:text-cyan-700 transition-colors shrink-0 group"
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#1d4ca2] hover:text-[#153a7e] transition-colors shrink-0 group"
         >
-          <span>Explore All 10 Disciplines</span>
+          <span>Explore All 4 Services</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
 
-      {/* Interactive Moving Stream: Row 1 (Glides Left on Scroll) */}
-      <div className="relative w-full overflow-hidden py-3">
+      {/* Row 1: Real Photos (Glides Left on Scroll) */}
+      <div className="relative w-full overflow-hidden py-2 z-10">
         <motion.div 
           style={{ x: xRow1 }} 
           className="flex gap-6 w-max cursor-grab active:cursor-grabbing pl-4 sm:pl-8"
@@ -173,10 +168,10 @@ export const ScrollMovingCards: React.FC = () => {
                 key={card.id}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.25 }}
-                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200/90 hover:border-cyan-400 rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-cyan-900/10 transition-all duration-300 flex flex-col justify-between group"
+                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Card Visual Banner */}
+                  {/* Real Photo */}
                   <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
                     <SafeImage
                       src={card.image}
@@ -185,39 +180,35 @@ export const ScrollMovingCards: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                     
-                    {/* Top Tag & Metric Badge */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md text-[10px] font-bold text-teal-800 border border-slate-200 shadow-sm">
-                      <IconComp className="w-3.5 h-3.5 text-teal-600" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md text-[10px] font-bold text-[#1d4ca2] border border-slate-200 shadow-sm">
+                      <IconComp className="w-3.5 h-3.5 text-[#1d4ca2]" />
                       <span>{card.discipline}</span>
                     </div>
 
-                    <div className="absolute bottom-3 right-3 text-right">
-                      <span className="font-display font-black text-xl text-white block leading-none drop-shadow-md">
-                        {card.metric}
-                      </span>
-                      <span className="text-[10px] text-teal-300 uppercase font-bold tracking-wider block">
-                        {card.metricLabel}
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <span className="text-[11px] text-white/90 font-medium block">
+                        📍 {card.location}
                       </span>
                     </div>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-teal-900 transition-colors mb-2">
+                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#1d4ca2] transition-colors mb-2">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 font-medium">
+                  <p className="text-xs text-slate-600 font-medium leading-relaxed">
                     {card.spec}
                   </p>
                 </div>
 
                 <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-teal-700 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
-                    Certified Execution
+                  <span className="text-[11px] font-bold text-[#1d4ca2] flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#1d4ca2]" />
+                    Verified On-Site Work
                   </span>
                   <Link
                     to={card.link}
-                    className="p-2 rounded-xl bg-slate-100 group-hover:bg-teal-600 group-hover:text-white text-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-blue-50 group-hover:bg-[#1d4ca2] group-hover:text-white text-[#1d4ca2] transition-colors"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -228,8 +219,8 @@ export const ScrollMovingCards: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Interactive Moving Stream: Row 2 (Glides Right on Scroll) */}
-      <div className="relative w-full overflow-hidden py-3">
+      {/* Row 2: Real Photos (Glides Right on Scroll) */}
+      <div className="relative w-full overflow-hidden py-2 z-10">
         <motion.div 
           style={{ x: xRow2 }} 
           className="flex gap-6 w-max cursor-grab active:cursor-grabbing pl-4 sm:pl-8"
@@ -241,10 +232,10 @@ export const ScrollMovingCards: React.FC = () => {
                 key={card.id}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.25 }}
-                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200/90 hover:border-cyan-400 rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-cyan-900/10 transition-all duration-300 flex flex-col justify-between group"
+                className="w-[340px] sm:w-[400px] shrink-0 bg-white border border-slate-200 hover:border-[#1d4ca2] rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Card Visual Banner */}
+                  {/* Real Photo */}
                   <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
                     <SafeImage
                       src={card.image}
@@ -253,39 +244,35 @@ export const ScrollMovingCards: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                     
-                    {/* Top Tag & Metric Badge */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md text-[10px] font-bold text-teal-800 border border-slate-200 shadow-sm">
-                      <IconComp className="w-3.5 h-3.5 text-teal-600" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md text-[10px] font-bold text-[#1d4ca2] border border-slate-200 shadow-sm">
+                      <IconComp className="w-3.5 h-3.5 text-[#1d4ca2]" />
                       <span>{card.discipline}</span>
                     </div>
 
-                    <div className="absolute bottom-3 right-3 text-right">
-                      <span className="font-display font-black text-xl text-white block leading-none drop-shadow-md">
-                        {card.metric}
-                      </span>
-                      <span className="text-[10px] text-cyan-300 uppercase font-bold tracking-wider block">
-                        {card.metricLabel}
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <span className="text-[11px] text-white/90 font-medium block">
+                        📍 {card.location}
                       </span>
                     </div>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-teal-900 transition-colors mb-2">
+                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#1d4ca2] transition-colors mb-2">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 font-medium">
+                  <p className="text-xs text-slate-600 font-medium leading-relaxed">
                     {card.spec}
                   </p>
                 </div>
 
                 <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-cyan-700 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-600" />
-                    IS / IRC Compliant
+                  <span className="text-[11px] font-bold text-[#1d4ca2] flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#1d4ca2]" />
+                    Verified On-Site Work
                   </span>
                   <Link
                     to={card.link}
-                    className="p-2 rounded-xl bg-slate-100 group-hover:bg-cyan-600 group-hover:text-white text-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-blue-50 group-hover:bg-[#1d4ca2] group-hover:text-white text-[#1d4ca2] transition-colors"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Link>

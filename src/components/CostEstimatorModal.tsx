@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calculator, IndianRupee, ArrowRight, ShieldCheck } from 'lucide-react';
+import { X, Calculator, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface CostEstimatorModalProps {
@@ -8,47 +8,40 @@ interface CostEstimatorModalProps {
 }
 
 export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, onClose }) => {
-  const [projectCategory, setProjectCategory] = useState<'bridge' | 'railway' | 'industrial' | 'commercial' | 'residential'>('commercial');
-  const [sizeValue, setSizeValue] = useState<number>(20000);
+  const [projectCategory, setProjectCategory] = useState<'roads' | 'pipelines' | 'rcc' | 'building'>('roads');
+  const [sizeValue, setSizeValue] = useState<number>(5000);
   const [finishingLevel, setFinishingLevel] = useState<'standard' | 'premium' | 'high_spec'>('premium');
 
   if (!isOpen) return null;
 
   const rates: Record<string, { standard: number; premium: number; high_spec: number; unit: string; label: string }> = {
-    commercial: {
-      standard: 2400,
-      premium: 3200,
-      high_spec: 4500,
-      unit: 'sq.ft',
-      label: 'Commercial Multi-Storey'
+    roads: {
+      standard: 12000,
+      premium: 18000,
+      high_spec: 26000,
+      unit: 'running meters',
+      label: 'Road Construction & Highway Pavements'
     },
-    residential: {
-      standard: 2100,
-      premium: 2900,
-      high_spec: 4200,
-      unit: 'sq.ft',
-      label: 'Residential Enclave / Villas'
+    pipelines: {
+      standard: 6500,
+      premium: 9500,
+      high_spec: 14000,
+      unit: 'meters of transmission',
+      label: 'Pipelines & Intake Jackwells'
     },
-    industrial: {
+    rcc: {
+      standard: 8500,
+      premium: 12000,
+      high_spec: 17500,
+      unit: 'm³ of concrete',
+      label: 'Heavy RCC Works & Foundations'
+    },
+    building: {
       standard: 1800,
       premium: 2600,
-      high_spec: 3600,
-      unit: 'sq.ft',
-      label: 'Industrial Shed & Heavy Workshop'
-    },
-    bridge: {
-      standard: 180000,
-      premium: 260000,
-      high_spec: 380000,
-      unit: 'linear meters',
-      label: 'PSC Box Girder / Major River Bridge'
-    },
-    railway: {
-      standard: 140000,
-      premium: 210000,
-      high_spec: 310000,
-      unit: 'linear meters',
-      label: 'Rail-Over-Rail / Alignment Track Bed'
+      high_spec: 3800,
+      unit: 'sq.ft built-up area',
+      label: 'Building Construction & Industrial Sheds'
     }
   };
 
@@ -64,12 +57,12 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="bg-white border border-slate-200 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
         {/* Header */}
-        <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80">
+        <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-teal-100 text-teal-800">
+            <div className="p-2 rounded-xl bg-blue-100 text-[#1d4ca2]">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
@@ -95,27 +88,28 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
             <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
               Select Construction Discipline:
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {[
-                { id: 'commercial', label: 'Commercial Complex' },
-                { id: 'residential', label: 'Residential Villas' },
-                { id: 'industrial', label: 'Industrial Workshop' },
-                { id: 'bridge', label: 'Major River Bridge' },
-                { id: 'railway', label: 'Railway Alignment' },
+                { id: 'roads', label: 'Road Construction' },
+                { id: 'pipelines', label: 'Pipelines Construction' },
+                { id: 'rcc', label: 'RCC Works' },
+                { id: 'building', label: 'Building Construction' },
               ].map(cat => (
                 <button
                   key={cat.id}
                   onClick={() => {
                     setProjectCategory(cat.id as any);
-                    if (cat.id === 'bridge' || cat.id === 'railway') {
-                      setSizeValue(150);
+                    if (cat.id === 'roads' || cat.id === 'pipelines') {
+                      setSizeValue(2000);
+                    } else if (cat.id === 'rcc') {
+                      setSizeValue(1500);
                     } else {
-                      setSizeValue(20000);
+                      setSizeValue(25000);
                     }
                   }}
                   className={`px-3 py-2.5 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                     projectCategory === cat.id
-                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-sm'
+                      ? 'bg-[#1d4ca2] text-white shadow-sm'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
@@ -130,22 +124,22 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
               <span className="uppercase font-bold text-slate-700">
                 Project Scale ({currentRate.unit}):
               </span>
-              <span className="font-mono text-teal-900 font-bold text-sm bg-teal-50 px-2.5 py-0.5 rounded-lg border border-teal-200">
+              <span className="font-mono text-[#1d4ca2] font-bold text-sm bg-blue-50 px-2.5 py-0.5 rounded-lg border border-blue-200">
                 {sizeValue.toLocaleString()} {currentRate.unit}
               </span>
             </div>
             <input
               type="range"
-              min={projectCategory === 'bridge' || projectCategory === 'railway' ? 30 : 2000}
-              max={projectCategory === 'bridge' || projectCategory === 'railway' ? 1000 : 250000}
-              step={projectCategory === 'bridge' || projectCategory === 'railway' ? 10 : 1000}
+              min={projectCategory === 'building' ? 2000 : 200}
+              max={projectCategory === 'building' ? 150000 : 25000}
+              step={projectCategory === 'building' ? 1000 : 100}
               value={sizeValue}
               onChange={(e) => setSizeValue(Number(e.target.value))}
-              className="w-full accent-teal-600 cursor-pointer"
+              className="w-full accent-[#1d4ca2] cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
-              <span>{projectCategory === 'bridge' ? '30m' : '2,000 sq.ft'}</span>
-              <span>{projectCategory === 'bridge' ? '1,000m+' : '250,000 sq.ft+'}</span>
+              <span>{projectCategory === 'building' ? '2,000 sq.ft' : '200 units'}</span>
+              <span>{projectCategory === 'building' ? '150,000 sq.ft+' : '25,000 units+'}</span>
             </div>
           </div>
 
@@ -156,15 +150,15 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
             <div className="grid grid-cols-3 gap-2">
               {[
                 { id: 'standard', label: 'Standard IS Specs' },
-                { id: 'premium', label: 'High Durability / IRC' },
-                { id: 'high_spec', label: 'Heavy Duty / Extreme Load' },
+                { id: 'premium', label: 'High Durability / MoRTH' },
+                { id: 'high_spec', label: 'Heavy Duty / Extreme Spec' },
               ].map(f => (
                 <button
                   key={f.id}
                   onClick={() => setFinishingLevel(f.id as any)}
                   className={`p-2.5 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                     finishingLevel === f.id
-                      ? 'bg-teal-50 border-2 border-teal-600 text-teal-950 shadow-xs'
+                      ? 'bg-blue-50 border-2 border-[#1d4ca2] text-[#1d4ca2] shadow-xs'
                       : 'bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100'
                   }`}
                 >
@@ -180,7 +174,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
               <span className="text-[11px] uppercase font-bold text-slate-500 block">
                 Estimated Benchmark Civil Cost
               </span>
-              <span className="font-display text-2xl sm:text-3xl font-extrabold text-teal-900">
+              <span className="font-display text-2xl sm:text-3xl font-extrabold text-[#1d4ca2]">
                 {formatCrores(totalCost)}
               </span>
               <span className="text-[11px] text-slate-500 block mt-0.5 font-medium">
@@ -191,7 +185,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
             <Link
               to={`/quote?type=${encodeURIComponent(currentRate.label)}&budget=${encodeURIComponent(formatCrores(totalCost))}`}
               onClick={onClose}
-              className="px-5 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm"
+              className="px-5 py-3 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm"
             >
               <span>Request Detailed BOQ</span>
               <ArrowRight className="w-4 h-4" />
@@ -200,7 +194,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
 
           <div className="text-[11px] text-slate-500 flex items-center gap-1.5 font-medium">
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span>Benchmark estimation only. Detailed costing is customized against soil borings, structural drawings, and tender schedules.</span>
+            <span>Benchmark estimation only. Detailed costing is customized against soil borings and tender specifications.</span>
           </div>
         </div>
       </div>

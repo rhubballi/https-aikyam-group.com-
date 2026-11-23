@@ -21,15 +21,15 @@ export const ProcessTimeline: React.FC = () => {
               onClick={() => setActiveStep(item.step)}
               className={`flex flex-col items-center text-center p-3 rounded-2xl transition-all duration-200 cursor-pointer ${
                 isActive 
-                  ? 'bg-teal-50 border border-teal-300 text-teal-950 font-bold shadow-sm' 
+                  ? 'bg-blue-50 border border-blue-200 text-blue-950 font-bold shadow-sm' 
                   : 'hover:bg-slate-50 text-slate-600'
               }`}
             >
               <div className={`w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm mb-2 transition-colors ${
                 isActive 
-                  ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-cyan-600/20' 
+                  ? 'bg-[#1d4ca2] text-white shadow-md shadow-blue-900/20' 
                   : isPassed 
-                    ? 'bg-slate-100 text-teal-700 border border-teal-300' 
+                    ? 'bg-slate-100 text-blue-800 border border-blue-200' 
                     : 'bg-slate-100 text-slate-400'
               }`}>
                 {isPassed ? <CheckCircle2 className="w-4 h-4" /> : item.step}
@@ -50,7 +50,7 @@ export const ProcessTimeline: React.FC = () => {
             onClick={() => setActiveStep(item.step)}
             className={`shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
               item.step === activeStep
-                ? 'bg-teal-600 text-white shadow-sm'
+                ? 'bg-[#1d4ca2] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-600'
             }`}
           >
@@ -63,11 +63,11 @@ export const ProcessTimeline: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 space-y-4">
           <div className="flex items-center gap-3">
-            <span className="px-3 py-1 rounded-full bg-teal-100/80 text-teal-900 border border-teal-300 text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 text-xs font-bold uppercase tracking-wider">
               Phase 0{currentProcess.step} of 07
             </span>
             <span className="text-xs text-slate-500 flex items-center gap-1 font-medium">
-              <Clock className="w-3.5 h-3.5 text-teal-600" />
+              <Clock className="w-3.5 h-3.5 text-[#1d4ca2]" />
               Typical Timeline: {currentProcess.timeline}
             </span>
           </div>
@@ -104,11 +104,11 @@ export const ProcessTimeline: React.FC = () => {
           <div className="space-y-3 text-xs">
             <div className="flex justify-between text-slate-600 font-semibold">
               <span>Overall Process Readiness:</span>
-              <span className="text-teal-900 font-bold">{Math.round((activeStep / 7) * 100)}%</span>
+              <span className="text-[#1d4ca2] font-bold">{Math.round((activeStep / 7) * 100)}%</span>
             </div>
             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
               <div 
-                className="bg-gradient-to-r from-teal-500 to-cyan-500 h-full rounded-full transition-all duration-300"
+                className="bg-gradient-to-r from-[#1d4ca2] to-blue-500 h-full rounded-full transition-all duration-300"
                 style={{ width: `${(activeStep / 7) * 100}%` }}
               ></div>
             </div>
@@ -125,7 +125,7 @@ export const ProcessTimeline: React.FC = () => {
             <button
               onClick={() => setActiveStep(prev => Math.min(7, prev + 1))}
               disabled={activeStep === 7}
-              className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 disabled:opacity-40 text-xs font-bold text-white transition-colors shadow-xs"
+              className="flex-1 py-2.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] disabled:opacity-40 text-xs font-bold text-white transition-colors shadow-xs"
             >
               Next Step
             </button>
@@ -133,7 +133,7 @@ export const ProcessTimeline: React.FC = () => {
 
           <Link
             to="/quote"
-            className="w-full py-2.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-xs text-teal-800 font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+            className="w-full py-2.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-xs text-[#1d4ca2] font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
           >
             <span>Inquire About Your Project Timeline</span>
             <ArrowRight className="w-3.5 h-3.5" />

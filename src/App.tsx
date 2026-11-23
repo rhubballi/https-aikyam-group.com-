@@ -6,15 +6,7 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
 import { ServicesOverview } from './pages/ServicesOverview';
-import { 
-  ServiceDetail, 
-  ResidentialConstructionPage, 
-  CommercialConstructionPage, 
-  IndustrialConstructionPage, 
-  InfrastructureProjectsPage, 
-  RenovationServicePage, 
-  RailwayServicePage 
-} from './pages/ServiceDetail';
+import { ServiceDetail } from './pages/ServiceDetail';
 import { MachineryPage } from './pages/MachineryPage';
 import { ContactUs } from './pages/ContactUs';
 import { RequestQuotePage } from './pages/RequestQuotePage';
@@ -31,7 +23,7 @@ const ScrollToTop: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-cyan-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-[#1d4ca2] selection:text-white">
       <ScrollToTop />
       <Navbar />
 
@@ -42,22 +34,21 @@ export const App: React.FC = () => {
 
           {/* 2. About Us */}
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
 
           {/* 3. Our Services Overview */}
           <Route path="/services" element={<ServicesOverview />} />
 
-          {/* 4. Specialized Disciplines */}
-          <Route path="/services/residential" element={<ResidentialConstructionPage />} />
-          <Route path="/services/commercial" element={<CommercialConstructionPage />} />
-          <Route path="/services/industrial" element={<IndustrialConstructionPage />} />
-          <Route path="/services/infrastructure" element={<InfrastructureProjectsPage />} />
-          <Route path="/services/renovation" element={<RenovationServicePage />} />
-          <Route path="/services/railways" element={<RailwayServicePage />} />
-          <Route path="/services/roads" element={<InfrastructureProjectsPage />} />
-          <Route path="/services/pipelines" element={<InfrastructureProjectsPage />} />
-          <Route path="/services/rcc-works" element={<InfrastructureProjectsPage />} />
+          {/* 4. The 4 Official Services (Matching Reference Website) */}
+          <Route path="/services/road-construction" element={<ServiceDetail forcedSlug="road-construction" />} />
+          <Route path="/services/pipelines-construction" element={<ServiceDetail forcedSlug="pipelines-construction" />} />
+          <Route path="/services/rcc-works" element={<ServiceDetail forcedSlug="rcc-works" />} />
+          <Route path="/services/building-construction" element={<ServiceDetail forcedSlug="building-construction" />} />
 
-          {/* Dynamic Service Route */}
+          {/* Legacy Aliases & Dynamic Route */}
+          <Route path="/services/roads" element={<Navigate to="/services/road-construction" replace />} />
+          <Route path="/services/pipelines" element={<Navigate to="/services/pipelines-construction" replace />} />
+          <Route path="/services/building" element={<Navigate to="/services/building-construction" replace />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
 
           {/* Plant & Machinery Fleet */}
@@ -65,6 +56,7 @@ export const App: React.FC = () => {
 
           {/* Contact Us */}
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
 
           {/* Request a Quote */}
           <Route path="/quote" element={<RequestQuotePage />} />

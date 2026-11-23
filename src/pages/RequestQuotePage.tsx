@@ -31,7 +31,7 @@ export const RequestQuotePage: React.FC = () => {
         <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
           <Link to="/" className="hover:text-slate-900 transition-colors">Home</Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-          <span className="text-teal-900 font-bold">Request a Quotation</span>
+          <span className="text-[#1d4ca2] font-bold">Request a Quotation</span>
         </nav>
       </div>
 
@@ -39,8 +39,8 @@ export const RequestQuotePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-teal-50 text-teal-900 border border-teal-200">
-              <FileText className="w-4 h-4 text-teal-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-50 text-[#1d4ca2] border border-blue-200">
+              <FileText className="w-4 h-4 text-[#1d4ca2]" />
               <span>Direct Estimation Desk</span>
             </div>
 
@@ -69,8 +69,8 @@ export const RequestQuotePage: React.FC = () => {
             
             {/* SLA Commitment */}
             <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
-              <div className="flex items-center gap-2 text-teal-700 font-bold text-xs uppercase tracking-wider">
-                <Clock className="w-4 h-4 text-teal-600" />
+              <div className="flex items-center gap-2 text-[#1d4ca2] font-bold text-xs uppercase tracking-wider">
+                <Clock className="w-4 h-4 text-[#1d4ca2]" />
                 <span>24-Hour Estimation SLA</span>
               </div>
               <h3 className="font-display font-bold text-lg text-slate-900">
@@ -78,15 +78,15 @@ export const RequestQuotePage: React.FC = () => {
               </h3>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <span><strong className="text-slate-900">Acknowledgment:</strong> You receive an instant tracking reference number (e.g., JPC-2026-XXXX).</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <span><strong className="text-slate-900">Technical Review:</strong> Chief Estimator reviews soil profiles, span limits, and IRC/IRS code requirements.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1d4ca2] shrink-0 mt-0.5" />
                   <span><strong className="text-slate-900">Direct Consultation:</strong> We schedule a preliminary teleconference or site walk-through.</span>
                 </li>
               </ul>
@@ -107,9 +107,9 @@ export const RequestQuotePage: React.FC = () => {
               <div className="pt-2 space-y-2">
                 <a
                   href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
-                  className="w-full py-3 rounded-xl bg-slate-50 hover:bg-teal-50 border border-slate-200 text-teal-900 font-bold text-xs uppercase flex items-center justify-center gap-2 transition-colors shadow-xs"
+                  className="w-full py-3 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 text-[#1d4ca2] font-bold text-xs uppercase flex items-center justify-center gap-2 transition-colors shadow-xs"
                 >
-                  <Phone className="w-3.5 h-3.5 text-teal-700" />
+                  <Phone className="w-3.5 h-3.5 text-[#1d4ca2]" />
                   <span>{companyProfile.contact.displayPhone}</span>
                 </a>
 

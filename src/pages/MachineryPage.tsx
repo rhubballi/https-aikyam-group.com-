@@ -18,8 +18,8 @@ export const MachineryPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-teal-50 text-teal-900 border border-teal-200">
-              <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-50 text-[#1d4ca2] border border-blue-200">
+              <ShieldCheck className="w-4 h-4 text-[#1d4ca2]" />
               <span>Direct Equipment Ownership</span>
             </div>
 
@@ -34,7 +34,7 @@ export const MachineryPage: React.FC = () => {
             <div className="pt-2 flex flex-wrap gap-4">
               <a
                 href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-md shadow-cyan-600/20"
+                className="px-6 py-3 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-md shadow-blue-900/20"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call Equipment Desk: {companyProfile.contact.displayPhone}</span>

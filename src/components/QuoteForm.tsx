@@ -32,7 +32,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
     email: '',
     phone: '',
     company: '',
-    projectType: defaultProjectType || 'Infrastructure & Bridges',
+    projectType: defaultProjectType || 'Road Construction',
     projectLocation: '',
     approximateBudget: '₹1 Cr – ₹5 Cr',
     timeline: 'Immediate (Within 1 Month)',
@@ -45,22 +45,20 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
   const [submittedQuote, setSubmittedQuote] = useState<QuoteRequest | null>(null);
 
   const budgetOptions = [
-    'Under ₹50 Lakhs (Residential / Minor Works)',
-    '₹50 Lakhs – ₹1 Cr (Commercial / Turnkey)',
-    '₹1 Cr – ₹5 Cr (Industrial / Multi-Storey)',
-    '₹5 Cr – ₹20 Cr (Major Bridge / Railway Scope)',
-    '₹20 Cr – ₹100 Cr+ (Large-Scale Infrastructure Package)',
+    'Under ₹50 Lakhs (Minor Civil Works)',
+    '₹50 Lakhs – ₹1 Cr (Commercial / RCC)',
+    '₹1 Cr – ₹5 Cr (Pipelines / Industrial Sheds)',
+    '₹5 Cr – ₹20 Cr (Road Corridors / Major Works)',
+    '₹20 Cr – ₹100 Cr+ (Large-Scale Turnkey EPC Package)',
     'Tender / Turnkey EPC Quoting'
   ];
 
   const projectTypes = [
-    'Infrastructure & Bridges',
-    'Railway Corridors & ROR',
-    'Industrial Plants & Heavy Workshops',
-    'Commercial & Institutional Construction',
-    'Residential & Luxury Enclaves',
-    'Structural Renovation & Retrofitting',
-    'Turnkey Civil EPC Contracting'
+    'Road Construction',
+    'Pipelines Construction',
+    'RCC Works',
+    'Building Construction',
+    'Turnkey Infrastructure EPC'
   ];
 
   const timelineOptions = [
@@ -165,7 +163,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 max-w-md mx-auto text-left space-y-3 shadow-xs">
             <div className="flex justify-between items-center border-b border-slate-200/80 pb-3">
               <span className="text-xs uppercase font-bold text-slate-500">Tracking Reference</span>
-              <span className="font-mono text-sm font-bold text-teal-900 bg-teal-100/80 px-2.5 py-1 rounded-lg border border-teal-300/60">
+              <span className="font-mono text-sm font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">
                 {submittedQuote.referenceNo}
               </span>
             </div>
@@ -212,8 +210,8 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="border-b border-slate-100 pb-4">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
-              <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1d4ca2] mb-1">
+              <ShieldCheck className="w-4 h-4 text-[#1d4ca2]" />
               <span>Direct Engineering Tender & Quotation Desk</span>
             </div>
             <h3 className="font-display text-2xl font-bold text-slate-900">
@@ -245,7 +243,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                Full Name <span className="text-teal-600">*</span>
+                Full Name <span className="text-[#1d4ca2]">*</span>
               </label>
               <div className="relative">
                 <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
@@ -256,14 +254,14 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   onChange={handleChange}
                   placeholder="e.g. Er. Rajesh Varma"
                   required
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 />
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                Official Email <span className="text-teal-600">*</span>
+                Official Email <span className="text-[#1d4ca2]">*</span>
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
@@ -274,14 +272,14 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   onChange={handleChange}
                   placeholder="e.g. rajesh@company.com"
                   required
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 />
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                Phone / WhatsApp <span className="text-teal-600">*</span>
+                Phone / WhatsApp <span className="text-[#1d4ca2]">*</span>
               </label>
               <div className="relative">
                 <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
@@ -292,7 +290,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   onChange={handleChange}
                   placeholder="+91 98765 43210"
                   required
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 />
               </div>
             </div>
@@ -309,20 +307,20 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="e.g. Infrastructure PSU / Private Developer"
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 />
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                Construction Discipline <span className="text-teal-600">*</span>
+                Construction Discipline <span className="text-[#1d4ca2]">*</span>
               </label>
               <select
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
               >
                 {projectTypes.map(t => (
                   <option key={t} value={t}>{t}</option>
@@ -332,7 +330,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                Project Site Location <span className="text-teal-600">*</span>
+                Project Site Location <span className="text-[#1d4ca2]">*</span>
               </label>
               <div className="relative">
                 <MapPin className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
@@ -343,7 +341,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   onChange={handleChange}
                   placeholder="e.g. Kakinada, Nellore, Bangalore"
                   required
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 />
               </div>
             </div>
@@ -358,7 +356,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   name="approximateBudget"
                   value={formData.approximateBudget}
                   onChange={handleChange}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 >
                   {budgetOptions.map(b => (
                     <option key={b} value={b}>{b}</option>
@@ -377,7 +375,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleChange}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
                 >
                   {timelineOptions.map(t => (
                     <option key={t} value={t}>{t}</option>
@@ -389,7 +387,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
 
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-              Project Description & Scope Details <span className="text-teal-600">*</span>
+              Project Description & Scope Details <span className="text-[#1d4ca2]">*</span>
             </label>
             <textarea
               name="projectDescription"
@@ -398,7 +396,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
               rows={4}
               required
               placeholder="Outline project scope, span requirements, soil conditions, estimated built-up area, or tender package specifications..."
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl p-3.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl p-3.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1d4ca2] focus:ring-2 focus:ring-[#1d4ca2]/20 transition-all"
             />
           </div>
 
@@ -411,7 +409,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 via-cyan-600 to-sky-600 hover:from-teal-500 hover:to-cyan-500 disabled:opacity-50 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-cyan-600/20 hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] disabled:opacity-50 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-blue-900/20 hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               {loading ? (
                 <>

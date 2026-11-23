@@ -19,31 +19,31 @@ export const WhyChooseUs: React.FC = () => {
       icon: Award,
       title: "23+ Years Engineering Track Record",
       subtitle: "Established in 2001",
-      description: "Proven history executing mission-critical bridge infrastructure, railway grade separators, and high-load industrial structures across South and Central India."
+      description: "Proven history executing mission-critical road infrastructure, water pipelines, and high-load industrial structures across South and Central India."
     },
     {
       icon: Cpu,
       title: "Modern Machinery & Plant Ownership",
       subtitle: "Zero Third-Party Dependency",
-      description: "Fully owned fleet of automated batching plants, transit mixers, sensor pavers, vibratory rollers, and 160 MT bridge launching truss gantries."
+      description: "Fully owned fleet of automated batching plants, transit mixers, sensor pavers, vibratory rollers, and heavy-duty excavation machinery."
     },
     {
       icon: FileCheck,
       title: "Rigorous Code & Quality Compliance",
-      subtitle: "IS / IRC / IRS Certified",
+      subtitle: "IS / IRC Certified",
       description: "Every pour undergoes 7-day and 28-day certified cube testing, ultrasonic flaw detection on rebar welds, and non-destructive rebound hammer tests."
     },
     {
       icon: HardHat,
-      title: "Uncompromising Trackside Safety",
+      title: "Uncompromising Site Safety",
       subtitle: "Zero-Accident Safety Regime",
-      description: "Dedicated HSE leadership enforcing railway safety block rules, personal protective equipment (PPE), daily safety briefings, and zero Lost Time Injuries (LTI)."
+      description: "Dedicated HSE leadership enforcing mandatory PPE, daily toolbox briefings, structured barricading, and zero Lost Time Injuries (LTI)."
     },
     {
       icon: Clock,
       title: "Proven On-Time Execution Velocity",
       subtitle: "Accelerated Delivery Milestones",
-      description: "Demonstrated velocity delivering 10 major river bridges across the Villupuram–Mayiladuthurai corridor in just 18 months without schedule overruns."
+      description: "Demonstrated velocity delivering multi-million rupee turnkey infrastructure projects on time without schedule overruns or scope compromises."
     },
     {
       icon: TrendingUp,
@@ -58,7 +58,7 @@ export const WhyChooseUs: React.FC = () => {
       <SectionHeader
         badge="Why Partner With JP Constructions"
         title="Engineering Excellence Built on Verified Capability"
-        subtitle="We combine two decades of public infrastructure contracting with modern plant machinery, delivering structures that endure for generations."
+        subtitle="We combine two decades of infrastructure contracting with modern plant machinery, delivering structures that endure for generations."
         centered
       />
 
@@ -73,18 +73,18 @@ export const WhyChooseUs: React.FC = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/10 flex flex-col justify-between group shadow-sm"
+              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-[#1d4ca2] transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/10 flex flex-col justify-between group shadow-sm"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-200/80 text-teal-700 flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-teal-600 group-hover:to-cyan-600 group-hover:text-white transition-all shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-[#1d4ca2] flex items-center justify-center mb-5 group-hover:bg-[#1d4ca2] group-hover:text-white transition-all shadow-sm">
                   <Icon className="w-6 h-6" />
                 </div>
 
                 <div className="space-y-1 mb-3">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-teal-700 block">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#1d4ca2] block">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-teal-900 transition-colors">
+                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#1d4ca2] transition-colors">
                     {pillar.title}
                   </h3>
                 </div>
@@ -95,7 +95,7 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               <div className="pt-5 mt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Verified Engineering Protocol</span>
               </div>
             </motion.div>
