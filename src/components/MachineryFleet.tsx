@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Truck, 
   Settings, 
@@ -99,10 +100,15 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
 
       {/* Equipment Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {filteredFleet.map((item) => (
-          <div
+        {filteredFleet.map((item, idx) => (
+          <motion.div
             key={item.id}
-            className="group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-amber-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between shadow-sm"
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, delay: (idx % 4) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -8, transition: { duration: 0.25 } }}
+            className="group bg-white border border-slate-200/90 rounded-3xl overflow-hidden hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 flex flex-col justify-between shadow-sm"
           >
             <div>
               {/* Image Container */}
@@ -153,7 +159,7 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
                 <span className="text-slate-400">Deployed Pan-India</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

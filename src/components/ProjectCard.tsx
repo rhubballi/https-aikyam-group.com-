@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Calendar, CheckCircle2, Building, Sparkles } from 'lucide-react';
 import { Project } from '../types';
 import { SafeImage } from './SafeImage';
@@ -11,9 +12,16 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) => {
   return (
-    <div className={`group relative rounded-2xl bg-white border border-slate-200/90 hover:border-amber-400/80 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-      featured ? 'lg:col-span-2 md:flex-row' : ''
-    }`}>
+    <motion.div
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8, transition: { duration: 0.25 } }}
+      className={`group relative rounded-3xl bg-white border border-slate-200/90 hover:border-amber-400 overflow-hidden flex flex-col transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 ${
+        featured ? 'lg:col-span-2 md:flex-row' : ''
+      }`}
+    >
       {/* Image Container */}
       <div className={`relative overflow-hidden bg-slate-100 ${
         featured ? 'md:w-1/2 aspect-[16/10] md:aspect-auto' : 'aspect-[16/10]'
@@ -115,6 +123,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

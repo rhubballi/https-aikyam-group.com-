@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   ShieldCheck, 
   Award, 
@@ -65,9 +66,14 @@ export const WhyChooseUs: React.FC = () => {
         {pillars.map((pillar, idx) => {
           const Icon = pillar.icon;
           return (
-            <div
+            <motion.div
               key={idx}
-              className="bg-white border border-slate-200 rounded-3xl p-7 hover:border-amber-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group shadow-sm"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.25 } }}
+              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 flex flex-col justify-between group shadow-sm"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
@@ -92,7 +98,7 @@ export const WhyChooseUs: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Verified Engineering Protocol</span>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

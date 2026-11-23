@@ -23,10 +23,13 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { ProjectCard } from '../components/ProjectCard';
 import { ProcessTimeline } from '../components/ProcessTimeline';
+import { motion } from 'framer-motion';
 import { QuoteForm } from '../components/QuoteForm';
 import { CostEstimatorModal } from '../components/CostEstimatorModal';
 import { SafeImage } from '../components/SafeImage';
 import { HeroSlider } from '../components/HeroSlider';
+import { ClientMarquee } from '../components/ClientMarquee';
+import { AnimatedCounter } from '../components/AnimatedCounter';
 import { MachineryFleet } from '../components/MachineryFleet';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { companyProfile, verifiedStats, clientTestimonials } from '../data/companyData';
@@ -60,32 +63,10 @@ export const Home: React.FC = () => {
       <HeroSlider onOpenEstimator={() => setEstimatorOpen(true)} />
 
       {/* =========================================================================
-          2. VERIFIED CREDENTIALS & EPC PARTNERS BANNER
+          2. ANIMATED CLIENT MARQUEE (Continuous Gliding EPC & Railways Tape)
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <div className="text-center mb-6">
-            <span className="text-xs uppercase font-bold tracking-widest text-slate-500">
-              Trusted by Premier Infrastructure Authorities & Global EPC Conglomerates
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
-            {companyProfile.verifiedClients.slice(0, 6).map((client, idx) => (
-              <div 
-                key={idx}
-                className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 text-center hover:border-amber-400 transition-colors flex flex-col items-center justify-center min-h-[90px]"
-              >
-                <span className="font-display font-bold text-sm text-slate-900 block">
-                  {client.shortName}
-                </span>
-                <span className="text-[10px] text-slate-500 font-medium truncate max-w-full block mt-0.5">
-                  {client.category}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ClientMarquee />
       </section>
 
       {/* =========================================================================
@@ -185,34 +166,62 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md">
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div 
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md border border-slate-200"
+              >
                 <SafeImage
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
                   alt="Civil Engineering Execution"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="bg-white border border-slate-200 p-5 rounded-3xl text-center shadow-xs">
-                <span className="font-display text-3xl font-black text-amber-700 block">54</span>
-                <span className="text-xs text-slate-500 uppercase font-bold">Major Spans Launched</span>
-              </div>
-            </div>
+              </motion.div>
+              <motion.div 
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-white border border-slate-200 p-5 rounded-3xl text-center shadow-xs"
+              >
+                <span className="font-display text-4xl font-black text-amber-700 block">
+                  <AnimatedCounter value={54} />
+                </span>
+                <span className="text-xs text-slate-500 uppercase font-bold tracking-wider mt-1 block">
+                  Major Spans Launched
+                </span>
+              </motion.div>
+            </motion.div>
 
-            <div className="space-y-4 pt-8">
-              <div className="bg-amber-50 border border-amber-200 text-slate-900 p-5 rounded-3xl shadow-xs">
+            <motion.div 
+              className="space-y-4 pt-8"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <motion.div 
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-amber-50 border border-amber-200 text-slate-900 p-5 rounded-3xl shadow-xs"
+              >
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-800 block">Headquarters</span>
                 <span className="font-display font-black text-xl block mt-1">Kakinada, AP</span>
                 <span className="text-xs text-slate-600 block mt-1">Santhi Nagar Hub</span>
-              </div>
-              <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md">
+              </motion.div>
+              <motion.div 
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="rounded-3xl overflow-hidden aspect-[4/5] bg-slate-100 shadow-md border border-slate-200"
+              >
                 <SafeImage
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
                   alt="Industrial Construction"
                   className="w-full h-full object-cover"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
         </div>
@@ -230,10 +239,15 @@ export const Home: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesData.map((svc) => (
-            <div
+          {servicesData.map((svc, idx) => (
+            <motion.div
               key={svc.id}
-              className="bg-white border border-slate-200 rounded-3xl p-7 hover:border-amber-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between group shadow-sm"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: (idx % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.25 } }}
+              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 flex flex-col justify-between group shadow-sm"
             >
               <div>
                 {/* Visual Image Preview with Icon Badge */}
@@ -274,8 +288,8 @@ export const Home: React.FC = () => {
                 </p>
 
                 <ul className="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
-                  {svc.scopeOfWork.slice(0, 3).map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
+                  {svc.scopeOfWork.slice(0, 3).map((item, sIdx) => (
+                    <li key={sIdx} className="flex items-start gap-2">
                       <span className="text-amber-600 font-bold">•</span>
                       <span className="line-clamp-1">{item}</span>
                     </li>
@@ -292,7 +306,7 @@ export const Home: React.FC = () => {
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -399,10 +413,15 @@ export const Home: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {clientTestimonials.map((t) => (
-            <div 
+          {clientTestimonials.map((t, idx) => (
+            <motion.div 
               key={t.id}
-              className="bg-white border border-slate-200 rounded-3xl p-7 flex flex-col justify-between hover:border-amber-400 transition-colors shadow-sm"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-white border border-slate-200/90 rounded-3xl p-7 flex flex-col justify-between hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 shadow-sm"
             >
               <div>
                 <div className="flex items-center gap-1 text-amber-500 mb-4 text-sm">
@@ -421,7 +440,7 @@ export const Home: React.FC = () => {
                 <div className="text-[11px] text-amber-800 font-bold">{t.organization}</div>
                 <div className="text-[10px] text-slate-500 mt-1">Project: {t.projectTitle}</div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
