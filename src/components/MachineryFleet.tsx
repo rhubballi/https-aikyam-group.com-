@@ -44,10 +44,10 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
       )}
 
       {/* Fleet Stats Overview Bar */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+      <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-sm">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           <div>
-            <span className="font-display text-3xl sm:text-4xl font-black text-amber-700 block">
+            <span className="font-display text-3xl sm:text-4xl font-black text-teal-700 block">
               45+
             </span>
             <span className="text-xs uppercase font-bold text-slate-500 tracking-wider mt-1 block">
@@ -63,7 +63,7 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
             </span>
           </div>
           <div>
-            <span className="font-display text-3xl sm:text-4xl font-black text-amber-700 block">
+            <span className="font-display text-3xl sm:text-4xl font-black text-cyan-700 block">
               160 MT
             </span>
             <span className="text-xs uppercase font-bold text-slate-500 tracking-wider mt-1 block">
@@ -89,7 +89,7 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
             onClick={() => setActiveCategory(cat.id)}
             className={`shrink-0 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeCategory === cat.id
-                ? 'bg-amber-500 text-slate-950 shadow-sm'
+                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-cyan-600/20'
                 : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -108,7 +108,7 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.5, delay: (idx % 4) * 0.1, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -8, transition: { duration: 0.25 } }}
-            className="group bg-white border border-slate-200/90 rounded-3xl overflow-hidden hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 flex flex-col justify-between shadow-sm"
+            className="group bg-white border border-slate-200/90 rounded-3xl overflow-hidden hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/10 flex flex-col justify-between shadow-sm"
           >
             <div>
               {/* Image Container */}
@@ -119,17 +119,17 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
-                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-amber-800 border border-slate-200 shadow-sm">
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-teal-800 border border-slate-200 shadow-sm">
                   {item.categoryLabel}
                 </div>
-                <div className="absolute top-3 right-3 bg-amber-500 text-slate-950 px-2.5 py-1 rounded-lg text-[10px] font-bold shadow-sm">
+                <div className="absolute top-3 right-3 bg-teal-600 text-white px-2.5 py-1 rounded-lg text-[10px] font-bold shadow-sm">
                   {item.unitsCount} Units in Fleet
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="p-5 space-y-3">
-                <h3 className="font-display font-bold text-base text-slate-900 group-hover:text-amber-800 transition-colors leading-snug">
+                <h3 className="font-display font-bold text-base text-slate-900 group-hover:text-teal-800 transition-colors leading-snug">
                   {item.name}
                 </h3>
 
@@ -152,7 +152,7 @@ export const MachineryFleet: React.FC<MachineryFleetProps> = ({ showTitle = true
             {/* Bottom Indicator */}
             <div className="px-5 pb-5 pt-1">
               <div className="w-full py-2 px-3 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] font-bold text-slate-700 flex items-center justify-between">
-                <span className="flex items-center gap-1.5 text-amber-700">
+                <span className="flex items-center gap-1.5 text-teal-700">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Certified Site Ready</span>
                 </span>

@@ -7,9 +7,9 @@ import {
   Wrench, 
   CheckCircle2, 
   HardHat, 
-  FileCheck,
-  TrendingUp,
-  Cpu
+  FileCheck, 
+  TrendingUp, 
+  Cpu 
 } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
 
@@ -73,18 +73,18 @@ export const WhyChooseUs: React.FC = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-amber-400 transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-900/10 flex flex-col justify-between group shadow-sm"
+              className="bg-white border border-slate-200/90 rounded-3xl p-7 hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/10 flex flex-col justify-between group shadow-sm"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-200/80 text-teal-700 flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-teal-600 group-hover:to-cyan-600 group-hover:text-white transition-all shadow-sm">
                   <Icon className="w-6 h-6" />
                 </div>
 
                 <div className="space-y-1 mb-3">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-amber-700 block">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-teal-700 block">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-amber-800 transition-colors">
+                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-teal-900 transition-colors">
                     {pillar.title}
                   </h3>
                 </div>
@@ -95,7 +95,7 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               <div className="pt-5 mt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>Verified Engineering Protocol</span>
               </div>
             </motion.div>

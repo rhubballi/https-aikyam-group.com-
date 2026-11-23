@@ -18,8 +18,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div className={`mb-12 ${centered ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'} ${className}`}>
       {badge && (
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3 bg-amber-500/10 text-amber-800 border border-amber-500/30 shadow-xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3 bg-cyan-50 text-cyan-900 border border-cyan-200/80 shadow-xs">
+          <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
           {badge}
         </div>
       )}

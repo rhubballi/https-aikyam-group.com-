@@ -69,7 +69,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
         {/* Header */}
         <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-amber-100 text-amber-800">
+            <div className="p-2 rounded-xl bg-teal-100 text-teal-800">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
@@ -115,7 +115,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
                   }}
                   className={`px-3 py-2.5 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                     projectCategory === cat.id
-                      ? 'bg-amber-500 text-slate-950 shadow-sm'
+                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-sm'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
@@ -130,7 +130,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
               <span className="uppercase font-bold text-slate-700">
                 Project Scale ({currentRate.unit}):
               </span>
-              <span className="font-mono text-amber-800 font-bold text-sm bg-amber-50 px-2.5 py-0.5 rounded-lg border border-amber-200">
+              <span className="font-mono text-teal-900 font-bold text-sm bg-teal-50 px-2.5 py-0.5 rounded-lg border border-teal-200">
                 {sizeValue.toLocaleString()} {currentRate.unit}
               </span>
             </div>
@@ -141,7 +141,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
               step={projectCategory === 'bridge' || projectCategory === 'railway' ? 10 : 1000}
               value={sizeValue}
               onChange={(e) => setSizeValue(Number(e.target.value))}
-              className="w-full accent-amber-600 cursor-pointer"
+              className="w-full accent-teal-600 cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
               <span>{projectCategory === 'bridge' ? '30m' : '2,000 sq.ft'}</span>
@@ -164,7 +164,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
                   onClick={() => setFinishingLevel(f.id as any)}
                   className={`p-2.5 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                     finishingLevel === f.id
-                      ? 'bg-amber-50 border-2 border-amber-500 text-amber-900 shadow-xs'
+                      ? 'bg-teal-50 border-2 border-teal-600 text-teal-950 shadow-xs'
                       : 'bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100'
                   }`}
                 >
@@ -180,7 +180,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
               <span className="text-[11px] uppercase font-bold text-slate-500 block">
                 Estimated Benchmark Civil Cost
               </span>
-              <span className="font-display text-2xl sm:text-3xl font-extrabold text-amber-800">
+              <span className="font-display text-2xl sm:text-3xl font-extrabold text-teal-900">
                 {formatCrores(totalCost)}
               </span>
               <span className="text-[11px] text-slate-500 block mt-0.5 font-medium">
@@ -191,7 +191,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
             <Link
               to={`/quote?type=${encodeURIComponent(currentRate.label)}&budget=${encodeURIComponent(formatCrores(totalCost))}`}
               onClick={onClose}
-              className="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm"
+              className="px-5 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm"
             >
               <span>Request Detailed BOQ</span>
               <ArrowRight className="w-4 h-4" />

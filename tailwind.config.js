@@ -8,15 +8,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          navy: '#0B192C',
-          slate: '#1E293B',
-          charcoal: '#0F172A',
-          amber: '#D97706',
-          gold: '#F59E0B',
-          lightGold: '#FEF3C7',
-          steel: '#334155',
-          muted: '#64748B',
-          offwhite: '#F8FAFC',
+          primary: '#0891b2',      // Fresh Cyan 600
+          primaryDark: '#0e7490',  // Cyan 700
+          teal: '#0d9488',         // Fresh Teal 600
+          tealDark: '#115e59',     // Teal 800
+          sky: '#0284c7',          // Sky 600
+          emerald: '#059669',      // Emerald 600
+          navy: '#0f172a',         // Slate 900
+          dark: '#020617',         // Slate 950
+          ice: '#f0f9ff',          // Fresh Sky Ice
+          mint: '#f0fdf4',         // Fresh Mint Ice
+          surface: '#f8fafc',      // Clean Slate 50
         }
       },
       fontFamily: {

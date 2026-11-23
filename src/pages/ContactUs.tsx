@@ -9,7 +9,8 @@ import {
   AlertCircle, 
   MessageSquare,
   Building,
-  ExternalLink
+  ExternalLink,
+  Sparkles
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { companyProfile } from '../data/companyData';
@@ -73,10 +74,10 @@ export const ContactUs: React.FC = () => {
 
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
+        <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-amber-500/10 text-amber-900 border border-amber-500/30">
-              <Building className="w-4 h-4 text-amber-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-teal-50 text-teal-900 border border-teal-200">
+              <Building className="w-4 h-4 text-teal-600" />
               <span>Direct Communication</span>
             </div>
 
@@ -99,10 +100,11 @@ export const ContactUs: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Headquarters Card */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 space-y-6 shadow-sm">
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-8 space-y-6 shadow-sm">
               <div className="border-b border-slate-100 pb-4">
-                <span className="text-[11px] uppercase font-bold text-amber-700 tracking-wider">
-                  Registered Corporate Headquarters
+                <span className="text-[11px] uppercase font-bold text-teal-700 tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+                  <span>Registered Corporate Headquarters</span>
                 </span>
                 <h3 className="font-display text-xl font-bold text-slate-900 mt-1">
                   JP Constructions India
@@ -111,7 +113,7 @@ export const ContactUs: React.FC = () => {
 
               <div className="space-y-4 text-sm text-slate-600">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Office Address:</span>
                     <span className="leading-relaxed">
@@ -122,80 +124,75 @@ export const ContactUs: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
+                  <Phone className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-slate-900 block">Key Contact / Leadership:</span>
-                    <span className="block font-medium">{companyProfile.contact.contactPerson}</span>
+                    <span className="font-bold text-slate-900 block">Telephone & WhatsApp:</span>
                     <a 
                       href={`tel:${companyProfile.contact.phone.replace(/\s+/g, '')}`}
-                      className="text-amber-800 hover:text-amber-900 font-bold block mt-0.5"
+                      className="text-teal-800 hover:text-cyan-800 font-bold block mt-0.5"
                     >
-                      {companyProfile.contact.displayPhone}
+                      {companyProfile.contact.phone}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
+                  <Mail className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-slate-900 block">Corporate Email:</span>
+                    <span className="font-bold text-slate-900 block">Official Email:</span>
                     <a 
                       href={`mailto:${companyProfile.contact.email}`}
-                      className="text-amber-800 hover:text-amber-900 font-semibold"
+                      className="text-teal-800 hover:text-cyan-800 font-semibold"
                     >
                       {companyProfile.contact.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 pt-2 border-t border-slate-100">
+                  <Clock className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">Working Hours:</span>
-                    <span className="text-slate-500 text-xs">
-                      {companyProfile.contact.workingHours}
-                    </span>
+                    <span className="text-slate-600">{companyProfile.contact.workingHours}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Instant WhatsApp Priority Button */}
-              <div className="pt-2 border-t border-slate-100">
+              <div className="pt-2">
                 <a
                   href={companyProfile.contact.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
+                  className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
                 >
-                  <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Start WhatsApp Conversation</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Direct WhatsApp Chat</span>
                 </a>
               </div>
             </div>
 
-            {/* Regional Project Hubs */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-3 shadow-sm">
-              <h4 className="text-xs uppercase font-bold text-slate-500 tracking-wider">
-                Active Construction Hubs & Field Bases:
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-xs text-slate-700">
-                <div className="bg-slate-50 p-3 rounded-2xl border border-slate-200/80">
-                  <span className="text-amber-800 font-bold block">Nellore Hub</span>
-                  <span className="text-slate-500 text-[11px]">Penna River Corridor</span>
+            {/* Operating Regional Hubs */}
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm space-y-3">
+              <span className="text-xs uppercase font-bold text-slate-500 block">
+                Regional Hubs & Site Camps:
+              </span>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+                  <span className="text-teal-800 font-bold block">Nellore Hub</span>
+                  <span className="text-slate-500 text-[11px]">AP Coastal Works</span>
                 </div>
-                <div className="bg-slate-50 p-3 rounded-2xl border border-slate-200/80">
-                  <span className="text-amber-800 font-bold block">Gudur Base</span>
-                  <span className="text-slate-500 text-[11px]">3rd Line Rail Alignment</span>
+                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+                  <span className="text-teal-800 font-bold block">Gudur Base</span>
+                  <span className="text-slate-500 text-[11px]">SCR Rail Corridor</span>
                 </div>
-                <div className="bg-slate-50 p-3 rounded-2xl border border-slate-200/80">
-                  <span className="text-amber-800 font-bold block">Podanur Site</span>
-                  <span className="text-slate-500 text-[11px]">S&T Workshop Complex</span>
+                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+                  <span className="text-teal-800 font-bold block">Podanur Site</span>
+                  <span className="text-slate-500 text-[11px]">Southern Railway</span>
                 </div>
-                <div className="bg-slate-50 p-3 rounded-2xl border border-slate-200/80">
-                  <span className="text-amber-800 font-bold block">Bangalore Base</span>
-                  <span className="text-slate-500 text-[11px]">South Western Railway</span>
+                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+                  <span className="text-teal-800 font-bold block">Bangalore Base</span>
+                  <span className="text-slate-500 text-[11px]">NH-7 Highway Works</span>
                 </div>
               </div>
             </div>
@@ -204,9 +201,9 @@ export const ContactUs: React.FC = () => {
 
           {/* Right Column: Direct Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm relative">
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-sm relative">
               <div className="border-b border-slate-100 pb-4 mb-6">
-                <span className="text-xs uppercase font-bold text-amber-700 tracking-wider">
+                <span className="text-xs uppercase font-bold text-teal-700 tracking-wider">
                   Enquiry Transmission
                 </span>
                 <h3 className="font-display text-2xl font-bold text-slate-900 mt-1">
@@ -219,7 +216,7 @@ export const ContactUs: React.FC = () => {
 
               {success ? (
                 <div className="py-12 text-center space-y-4 animate-in zoom-in-95 duration-200">
-                  <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+                  <div className="w-14 h-14 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto border border-teal-200">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="font-display text-2xl font-bold text-slate-900">
@@ -255,7 +252,7 @@ export const ContactUs: React.FC = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                         placeholder="Er. Suresh Varma"
                         required
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
                       />
                     </div>
 
@@ -269,7 +266,7 @@ export const ContactUs: React.FC = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                         placeholder="suresh@domain.com"
                         required
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -284,7 +281,7 @@ export const ContactUs: React.FC = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                         placeholder="+91 90030 38833"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
                       />
                     </div>
 
@@ -296,7 +293,7 @@ export const ContactUs: React.FC = () => {
                         type="text"
                         value={formData.subject}
                         onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -311,7 +308,7 @@ export const ContactUs: React.FC = () => {
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                       placeholder="Please share details about your inquiry, bridge project, tender submission, or partnership interest..."
                       required
-                      className="w-full bg-slate-50 border border-slate-300 rounded-xl p-4 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-amber-500 transition-colors"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl p-4 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-cyan-500 transition-colors"
                     />
                   </div>
 
@@ -323,7 +320,7 @@ export const ContactUs: React.FC = () => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-sm disabled:opacity-50"
+                      className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-md shadow-cyan-600/20 disabled:opacity-50"
                     >
                       {loading ? (
                         <span>Transmitting...</span>
@@ -345,7 +342,7 @@ export const ContactUs: React.FC = () => {
 
       {/* Interactive Google Maps Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
+        <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <h3 className="font-display font-bold text-xl text-slate-900">
@@ -359,7 +356,7 @@ export const ContactUs: React.FC = () => {
               href="https://maps.google.com/?q=Santhi+Nagar+Kakinada+Andhra+Pradesh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
+              className="text-xs font-bold text-teal-700 hover:text-cyan-800 flex items-center gap-1"
             >
               <span>Open in Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />

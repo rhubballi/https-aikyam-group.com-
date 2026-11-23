@@ -11,7 +11,7 @@ export const WhatsAppButton: React.FC = () => {
         aria-label="Direct Phone Call to JP Constructions"
         className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
       >
-        <div className="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+        <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center">
           <Phone className="w-3.5 h-3.5 fill-current" />
         </div>
         <span className="text-xs font-bold tracking-wide hidden sm:inline text-slate-700">

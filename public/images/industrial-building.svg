@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="indBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e7490" />
+      <stop offset="60%" stop-color="#155e75" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#indBg)" />
+
+  <!-- Industrial Facility Ground Level -->
+  <rect y="560" width="1200" height="240" fill="#1e293b" />
+  <line x1="0" y1="560" x2="1200" y2="560" stroke="#06b6d4" stroke-width="4"/>
+
+  <!-- Pre-Engineered Building (PEB) Warehouse Portal Frames -->
+  <g transform="translate(160, 220)">
+    <!-- Main High-Bay Industrial Workshop Shed -->
+    <polygon points="0,180 440,40 880,180 880,340 0,340" fill="#083344" stroke="#0891b2" stroke-width="4"/>
+    <!-- Roof Ridge & Monitor Louver -->
+    <polygon points="360,65 440,20 520,65 520,80 360,80" fill="#0d9488" stroke="#2dd4bf" stroke-width="2"/>
+    <!-- Structural Portal Rafter Lines -->
+    <line x1="140" y1="200" x2="140" y2="340" stroke="#0891b2" stroke-width="3" opacity="0.6"/>
+    <line x1="300" y1="200" x2="300" y2="340" stroke="#0891b2" stroke-width="3" opacity="0.6"/>
+    <line x1="580" y1="200" x2="580" y2="340" stroke="#0891b2" stroke-width="3" opacity="0.6"/>
+    <line x1="740" y1="200" x2="740" y2="340" stroke="#0891b2" stroke-width="3" opacity="0.6"/>
+    <!-- Heavy Duty High-Bay Rolling Shutter Doors -->
+    <rect x="80" y="240" width="120" height="100" fill="#1e293b" stroke="#38bdf8" stroke-width="2" rx="4"/>
+    <line x1="80" y1="260" x2="200" y2="260" stroke="#475569" stroke-width="2"/>
+    <line x1="80" y1="280" x2="200" y2="280" stroke="#475569" stroke-width="2"/>
+    <line x1="80" y1="300" x2="200" y2="300" stroke="#475569" stroke-width="2"/>
+    <line x1="80" y1="320" x2="200" y2="320" stroke="#475569" stroke-width="2"/>
+
+    <rect x="260" y="240" width="120" height="100" fill="#1e293b" stroke="#38bdf8" stroke-width="2" rx="4"/>
+    <rect x="500" y="240" width="120" height="100" fill="#1e293b" stroke="#38bdf8" stroke-width="2" rx="4"/>
+    <rect x="680" y="240" width="120" height="100" fill="#1e293b" stroke="#38bdf8" stroke-width="2" rx="4"/>
+
+    <!-- High-Bay Clerestory Glazing Panels -->
+    <rect x="60" y="190" width="760" height="30" fill="#ecfeff" opacity="0.4" rx="4"/>
+  </g>
+
+  <!-- Commercial Multi-Storey Building on the Right -->
+  <g transform="translate(860, 160)">
+    <rect x="0" y="0" width="240" height="400" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+    <!-- Window Grid -->
+    <g fill="#38bdf8" opacity="0.3">
+      <rect x="25" y="40" width="40" height="50" rx="3"/>
+      <rect x="85" y="40" width="40" height="50" rx="3"/>
+      <rect x="145" y="40" width="40" height="50" rx="3"/>
+
+      <rect x="25" y="110" width="40" height="50" rx="3"/>
+      <rect x="85" y="110" width="40" height="50" rx="3"/>
+      <rect x="145" y="110" width="40" height="50" rx="3"/>
+
+      <rect x="25" y="180" width="40" height="50" rx="3"/>
+      <rect x="85" y="180" width="40" height="50" rx="3"/>
+      <rect x="145" y="180" width="40" height="50" rx="3"/>
+
+      <rect x="25" y="250" width="40" height="50" rx="3"/>
+      <rect x="85" y="250" width="40" height="50" rx="3"/>
+      <rect x="145" y="250" width="40" height="50" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Technical Spec Watermark & Badge -->
+  <g transform="translate(60, 60)">
+    <rect width="360" height="85" rx="14" fill="#0f172a" opacity="0.9" stroke="#0891b2" stroke-width="2"/>
+    <text x="25" y="34" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#38bdf8" letter-spacing="1">JP CONSTRUCTIONS</text>
+    <text x="25" y="60" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#cbd5e1">Industrial Workshops &amp; Commercial Complexes</text>
+  </g>
+</svg>

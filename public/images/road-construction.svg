@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roadSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="60%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#f0f9ff" />
+    </linearGradient>
+    <linearGradient id="asphalt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#roadSky)" />
+
+  <!-- Distant Landscape -->
+  <path d="M 0 450 Q 300 400 600 430 T 1200 420 L 1200 800 L 0 800 Z" fill="#059669" opacity="0.3" />
+  <path d="M 0 480 Q 400 440 800 460 T 1200 450 L 1200 800 L 0 800 Z" fill="#047857" opacity="0.4" />
+
+  <!-- Curved Multi-Lane Express Highway Perspective -->
+  <polygon points="540,430 660,430 1200,800 0,800" fill="url(#asphalt)" />
+
+  <!-- Road Concrete Curbs & Berms -->
+  <polygon points="530,430 540,430 0,800 -30,800" fill="#0d9488" />
+  <polygon points="660,430 670,430 1230,800 1200,800" fill="#0d9488" />
+
+  <!-- Road Lane Markings -->
+  <polygon points="597,430 603,430 608,800 592,800" fill="#f8fafc" opacity="0.9" stroke-dasharray="40 25"/>
+  <polygon points="570,430 573,430 260,800 240,800" fill="#38bdf8" opacity="0.8" stroke-dasharray="30 20"/>
+  <polygon points="627,430 630,430 960,800 940,800" fill="#38bdf8" opacity="0.8" stroke-dasharray="30 20"/>
+
+  <!-- Heavy Asphalt Sensor Paver Machine -->
+  <g transform="translate(680, 520)">
+    <!-- Paver Body -->
+    <rect x="0" y="40" width="220" height="80" rx="8" fill="#0891b2" stroke="#164e63" stroke-width="3"/>
+    <!-- Screed Unit at Back -->
+    <rect x="-30" y="80" width="280" height="35" rx="4" fill="#1e293b"/>
+    <!-- Hopper Wings at Front -->
+    <polygon points="220,50 270,30 270,110 220,110" fill="#0284c7"/>
+    <!-- Track Crawlers -->
+    <rect x="20" y="115" width="180" height="25" rx="10" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+    <!-- Exhaust & Canopy -->
+    <rect x="30" y="10" width="120" height="30" rx="4" fill="#334155"/>
+    <line x1="50" y1="10" x2="50" y2="-15" stroke="#64748b" stroke-width="6"/>
+    <!-- Status Light -->
+    <circle cx="160" cy="25" r="7" fill="#34d399"/>
+  </g>
+
+  <!-- Heavy Tandem Vibratory Roller -->
+  <g transform="translate(240, 560)">
+    <rect x="40" y="30" width="160" height="70" rx="8" fill="#0d9488" stroke="#134e4a" stroke-width="3"/>
+    <!-- Front Steel Drum -->
+    <rect x="0" y="60" width="45" height="55" rx="12" fill="#475569" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Rear Steel Drum -->
+    <rect x="195" y="60" width="45" height="55" rx="12" fill="#475569" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Operator Cabin -->
+    <rect x="80" y="0" width="80" height="35" rx="5" fill="#f0fdfa" opacity="0.9"/>
+  </g>
+
+  <!-- Technical Spec Watermark & Badge -->
+  <g transform="translate(60, 80)">
+    <rect width="360" height="85" rx="14" fill="#0f172a" opacity="0.85" stroke="#06b6d4" stroke-width="2"/>
+    <text x="25" y="34" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#38bdf8" letter-spacing="1">JP CONSTRUCTIONS</text>
+    <text x="25" y="60" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#cbd5e1">Sensor-Paved Highways &amp; PQC Pavements</text>
+  </g>
+</svg>

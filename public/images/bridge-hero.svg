@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e7490" />
+      <stop offset="60%" stop-color="#0891b2" />
+      <stop offset="100%" stop-color="#ecfeff" />
+    </linearGradient>
+    <linearGradient id="bridgeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky & Grid Background -->
+  <rect width="1200" height="800" fill="url(#skyGrad)" />
+  <rect width="1200" height="800" fill="url(#grid)" />
+
+  <!-- Distant Hills / Horizon -->
+  <path d="M 0 540 Q 300 480 600 520 T 1200 500 L 1200 800 L 0 800 Z" fill="#164e63" opacity="0.4" />
+  <path d="M 0 570 Q 400 520 800 550 T 1200 540 L 1200 800 L 0 800 Z" fill="#0f766e" opacity="0.5" />
+
+  <!-- River Water Body -->
+  <rect y="600" width="1200" height="200" fill="#083344" />
+  <path d="M 0 600 Q 300 620 600 600 T 1200 610 L 1200 800 L 0 800 Z" fill="#0e7490" opacity="0.3" />
+
+  <!-- Construction Crane on River Pier -->
+  <g transform="translate(200, 260)">
+    <!-- Tower Mast -->
+    <rect x="50" y="80" width="24" height="260" fill="#0d9488" stroke="#134e4a" stroke-width="2"/>
+    <line x1="50" y1="100" x2="74" y2="140" stroke="#ccfbf1" stroke-width="2"/>
+    <line x1="74" y1="140" x2="50" y2="180" stroke="#ccfbf1" stroke-width="2"/>
+    <line x1="50" y1="180" x2="74" y2="220" stroke="#ccfbf1" stroke-width="2"/>
+    <line x1="74" y1="220" x2="50" y2="260" stroke="#ccfbf1" stroke-width="2"/>
+    <line x1="50" y1="260" x2="74" y2="300" stroke="#ccfbf1" stroke-width="2"/>
+    <!-- Jib Arm -->
+    <polygon points="-80,80 260,80 260,70 62,30 -80,70" fill="#0d9488" stroke="#134e4a" stroke-width="2"/>
+    <!-- Counterweight -->
+    <rect x="-70" y="72" width="40" height="25" fill="#334155"/>
+    <!-- Cab -->
+    <rect x="74" y="65" width="22" height="25" fill="#f0fdfa" rx="3"/>
+    <!-- Hoist Cable & Hook -->
+    <line x1="200" y1="80" x2="200" y2="220" stroke="#f8fafc" stroke-width="2" stroke-dasharray="3 3"/>
+    <polygon points="195,220 205,220 200,232" fill="#06b6d4"/>
+  </g>
+
+  <!-- Major River Bridge Deck & Piers -->
+  <g>
+    <!-- Piers in Water -->
+    <rect x="180" y="480" width="60" height="150" fill="#334155" rx="8" stroke="#64748b" stroke-width="2"/>
+    <rect x="460" y="440" width="70" height="190" fill="#334155" rx="8" stroke="#64748b" stroke-width="2"/>
+    <rect x="760" y="440" width="70" height="190" fill="#334155" rx="8" stroke="#64748b" stroke-width="2"/>
+    <rect x="1020" y="480" width="60" height="150" fill="#334155" rx="8" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Pier Caps -->
+    <rect x="160" y="465" width="100" height="20" fill="#475569" rx="4"/>
+    <rect x="435" y="425" width="120" height="22" fill="#475569" rx="4"/>
+    <rect x="735" y="425" width="120" height="22" fill="#475569" rx="4"/>
+    <rect x="1000" y="465" width="100" height="20" fill="#475569" rx="4"/>
+
+    <!-- Continuous PSC Box Girder Deck -->
+    <polygon points="0,480 1200,440 1200,480 0,520" fill="url(#bridgeGrad)" />
+    <!-- Bridge Roadway Surface -->
+    <polygon points="0,475 1200,435 1200,443 0,483" fill="#0f172a" />
+    <line x1="0" y1="479" x2="1200" y2="439" stroke="#38bdf8" stroke-width="3" stroke-dasharray="25 15"/>
+
+    <!-- Parapet Crash Barrier -->
+    <line x1="0" y1="465" x2="1200" y2="425" stroke="#94a3b8" stroke-width="6"/>
+
+    <!-- Stay Cables on Pylon -->
+    <g transform="translate(600, 160)">
+      <!-- Main A-Frame Pylon -->
+      <polygon points="-25,270 -5,0 5,0 25,270" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="0" cy="15" r="8" fill="#38bdf8"/>
+      <!-- Fan Cables -->
+      <line x1="0" y1="30" x2="-350" y2="295" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="60" x2="-260" y2="290" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="90" x2="-170" y2="285" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="120" x2="-80" y2="280" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+
+      <line x1="0" y1="30" x2="350" y2="275" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="60" x2="260" y2="280" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="90" x2="170" y2="282" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="120" x2="80" y2="285" stroke="#f0fdfa" stroke-width="2" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Technical Spec Watermark & Badge -->
+  <g transform="translate(60, 80)">
+    <rect width="360" height="85" rx="14" fill="#0f172a" opacity="0.85" stroke="#0891b2" stroke-width="2"/>
+    <text x="25" y="34" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#38bdf8" letter-spacing="1">JP CONSTRUCTIONS</text>
+    <text x="25" y="60" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#cbd5e1">Major PSC River Bridge &amp; Viaduct Corridors</text>
+  </g>
+</svg>
