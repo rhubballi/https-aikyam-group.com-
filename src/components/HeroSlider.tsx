@@ -5,15 +5,12 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ShieldCheck, 
-  Phone, 
   Calculator,
   Truck,
   Droplets,
   Layers,
-  Building2,
-  Sparkles
+  Building2
 } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
 
 interface HeroSliderProps {
   onOpenEstimator: () => void;
@@ -95,35 +92,28 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
 
   return (
     <div 
-      className="relative bg-[#072151] text-white overflow-hidden border-b-4 border-[#1d4ca2]"
+      className="relative bg-black text-white overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Construction Video with Smooth Overlay */}
+      {/* Background Construction Video - Clean, Clear, Zero Blue Tint */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="/images/main-slider/slide-1.jpg"
-          className="w-full h-full object-cover scale-105 filter brightness-[0.55] contrast-105"
+          className="w-full h-full object-cover scale-100"
         >
           <source src="/videos/construction-hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Map Watermark Pattern Overlay matching reference site */}
-        <div 
-          className="absolute inset-0 opacity-15 bg-repeat"
-          style={{ backgroundImage: "url('/images/background/bg-map.png')" }}
-        />
-
-        {/* Deep Royal Navy & Blue Gradient for optimal legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#072151]/95 via-[#072151]/85 to-[#072151]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#072151] via-transparent to-[#072151]/40" />
+        {/* Transparent neutral gradient strictly for text legibility without obscuring the video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
       </div>
 
-      {/* Main Slide Content Over Video */}
+      {/* Main Slide Content Over Transparent Video */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div className="max-w-4xl space-y-6 text-left">
           
@@ -134,26 +124,26 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
               <span>{current.discipline}</span>
             </span>
 
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-blue-200 text-xs font-semibold border border-white/20">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-semibold border border-white/20">
               <ShieldCheck className="w-3.5 h-3.5 text-[#38bdf8]" />
               <span>Est. 2001 • Certified Civil EPC Contractor</span>
             </span>
           </div>
 
           {/* Main Title */}
-          <h1 className="font-display text-3xl sm:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-md">
+          <h1 className="font-display text-3xl sm:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-[0_4px_14px_rgba(0,0,0,0.85)]">
             {current.title}
           </h1>
 
           {/* Tagline / Subtitle */}
-          <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl drop-shadow-sm">
+          <p className="text-base sm:text-lg text-slate-100 font-medium leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             {current.description}
           </p>
 
           {/* Technical Specs Pill Strip */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-xl">
             {current.stats.map((st, sIdx) => (
-              <div key={sIdx} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3 text-center">
+              <div key={sIdx} className="bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-3 text-center shadow-lg">
                 <span className="text-[10px] text-blue-200 uppercase font-bold tracking-wider block">
                   {st.label}
                 </span>
@@ -164,11 +154,11 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
             ))}
           </div>
 
-          {/* Buttons: Clean, without Machinery Fleet */}
+          {/* Action Buttons */}
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
               to={current.link}
-              className="px-7 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-black text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-blue-900/40 flex items-center gap-2 group active:scale-95"
+              className="px-7 py-3.5 rounded-xl bg-[#1d4ca2] hover:bg-[#153a7e] text-white font-black text-xs uppercase tracking-wider transition-all duration-200 shadow-xl shadow-black/40 flex items-center gap-2 group active:scale-95"
             >
               <span>Explore {current.discipline}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -176,14 +166,14 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
 
             <Link
               to="/contact"
-              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 backdrop-blur-md active:scale-95"
+              className="px-6 py-3.5 rounded-xl bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 backdrop-blur-md active:scale-95 shadow-lg"
             >
               <span>Contact Engineering Team</span>
             </Link>
 
             <button
               onClick={onOpenEstimator}
-              className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-blue-200 border border-blue-400/30 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3.5 rounded-xl bg-black/30 hover:bg-black/50 text-white border border-white/25 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer backdrop-blur-md shadow-lg"
             >
               <Calculator className="w-4 h-4 text-[#38bdf8]" />
               <span>Cost Estimator</span>
@@ -194,7 +184,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
       </div>
 
       {/* Bottom Interactive Discipline Tabs Over Video */}
-      <div className="relative z-20 bg-[#072151]/90 backdrop-blur-md border-t border-blue-900/50 px-4 sm:px-8 py-3">
+      <div className="relative z-20 bg-black/40 backdrop-blur-md border-t border-white/10 px-4 sm:px-8 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Discipline Navigation Pills (The 4 Official Services) */}
@@ -209,7 +199,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
                   className={`shrink-0 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#1d4ca2] text-white shadow-md font-black scale-105'
-                      : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'
+                      : 'bg-black/30 text-slate-200 hover:text-white hover:bg-black/50 border border-white/10 backdrop-blur-sm'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -223,14 +213,14 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEstimator }) => {
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => setActiveSlide(prev => (prev - 1 + slides.length) % slides.length)}
-              className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer border border-white/15"
+              className="p-2 rounded-xl bg-black/30 hover:bg-black/50 text-white transition-colors cursor-pointer border border-white/15 backdrop-blur-sm"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => setActiveSlide(prev => (prev + 1) % slides.length)}
-              className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer border border-white/15"
+              className="p-2 rounded-xl bg-black/30 hover:bg-black/50 text-white transition-colors cursor-pointer border border-white/15 backdrop-blur-sm"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-4 h-4" />
